@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLGU - Welcome</title>
+    <script src="JavaScriptForALL.js"></script>
+
+</head>
+<body>
+<style>
+    .hero {
+    background: url('Back.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    position: relative;
+    padding-left: 60%; /* Moves the content to the left */
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Background.png') no-repeat center center fixed;
+    color: rgb(1, 1, 62);
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: rgb(1, 1, 62);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Logo */
+.logo {
+    width: 50px; /* Adjust the size as needed */
+    height: flex;
+}
+
+/* Hero Section */
+.hero-content {
+    position: absolute;
+    right: 10%; /* Adjust this value to move it left */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(88, 7, 7, 0.8);
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: white;
+    max-width: 400px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.hero h2, .hero p {
+    color: white;
+    margin: 60px 0;
+    font-size: 25px; /* Increased text size */
+}
+.hero h1 {
+    color: white;
+    margin: 100px 0;
+    font-size: 85px; /* Increased text size */
+}
+
+.btn-learn-more {
+    right: 30%; /* Adjust this value to move left */
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 72px;
+    background-color: rgb(1, 1, 62); 
+    color: #fff; /* Black text */
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-learn-more:hover {
+    background-color: rgb(1, 1, 37); /* Darker Gold/Orange */
+    color: #fff;
+}
+
+
+.dark-blue-strip {
+    background-color: rgb(1, 1, 62); /* Dark Blue */
+    height: 30px; /* Adjust thickness as needed */
+    width: 100%;
+}
+
+
+/* Image Section */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-gallery img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mission-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10%;
+    background-color: white;
+}
+
+.mission-section img {
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mission-content {
+    width: 50%;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.mission-content h2 {
+    color: rgb(146, 9, 9);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.mission-content p {
+    font-size: 1.2em;
+    color: rgb(50, 50, 50);
+    line-height: 1.6;
+}
+
+/* Benefits Section */
+.benefits-section {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 50px 10%;
+    background-color: white;
+}
+
+.benefit {
+    width: 22%;
+}
+
+.benefit h3 {
+    font-size: 1.5em;
+    color: rgb(146, 9, 9);
+    font-weight: bold;
+}
+
+.highlight {
+    color: rgb(146, 9, 9);
+    font-style: italic;
+}
+
+.benefit p {
+    font-size: 1.1em;
+    color: rgb(50, 50, 50);
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .benefits-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefit {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mission-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mission-section img {
+        width: 90%;
+    }
+
+    .mission-content {
+        width: 90%;
+        padding: 20px 0;
+    }
+}
+
+/* Next Steps Section */
+.next-steps {
+    text-align: center;
+    padding: 50px 10%;
+    background-color: white;
+}
+
+.next-steps h2 {
+    font-size: 2em;
+    color: rgb(146, 9, 9);
+    margin-bottom: 30px;
+}
+
+.next-steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.step {
+    width: 30%;
+    text-align: center;
+}
+
+.step img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.step h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 15px 0 10px;
+    color: rgb(50, 50, 50);
+}
+
+.step p {
+    font-size: 1.1em;
+    color: rgb(50, 50, 50);
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .next-steps-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
+.footer {
+    background-color: rgb(1, 1, 62); /* Matches existing footer color */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: rgba(146, 9, 9, 0.8); /* Highlight color on hover */
+}
+
+/* Style specifically for the Login link */
+.footer-login {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-gallery img {
+        width: 90%;
+    }
+}
+
+</style>
+
+<!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="hlgu-logo.png" alt="HLGU Logo" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="ADMISSIONS.html">Admissions</a></li>
+            <li><a href="ACADEMICS.html">Academics</a></li>
+            <li><a href="ATHLETICS.html">Athletics</a></li>
+            <li><a href="STUDENT.LIFE.html">Student Life</a></li>
+            <li><a href="GIVING.html">Alumni</a></li>
+            <li><a href="SUPPORT.html">IT Support</a></li>
+        </ul>
+    </nav>
+
+<!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1><b>Welcome!</b></h1>
+            <p>We aim to impact lives and communities by providing meaningful education grounded in a Biblical perspective.</p>
+            <a href="ABOUT.html" class="btn-learn-more">Click Here To Learn More</a>
+        </div>
+    </section>
+
+<!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+<!-- New Section: Mission Statement -->
+    <section class="mission-section">
+        <img src="Mission.jpg" alt="Students at HLGU">
+        <div class="mission-content">
+            <h2>We want more for you.</h2>
+            <p>Find yourself surrounded by a learning community that will prepare you for more than a successful career. 
+               Prepare yourself for a life well lived.</p>
+        </div>
+    </section>
+
+<!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+<!-- More Benefits Section -->
+    <section class="benefits-section">
+        <div class="benefit">
+            <h3><span class="highlight">More <i>opportunity.</i></span></h3>
+            <p>Open your path to more choices and a bigger vision of where life can lead.</p>
+        </div>
+        <div class="benefit">
+            <h3><span class="highlight">More <i>connections.</i></span></h3>
+            <p>Make deep friendships and relationships that last a lifetime.</p>
+        </div>
+        <div class="benefit">
+            <h3><span class="highlight">More <i>money.</i></span></h3>
+            <p>Simply put: college grads have more earning potential. On average, 67% more.</p>
+        </div>
+        <div class="benefit">
+            <h3><span class="highlight">More <i>life.</i></span></h3>
+            <p>Want to live a long and healthy life? Research shows: college is the secret.</p>
+        </div>
+    </section>
+
+<!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+<!-- Next Steps Section -->
+    <section class="next-steps">
+        <h2>Take your next step today.</h2>
+        <div class="next-steps-container">
+            <div class="step">
+                <img src="ApplyNow.webp" alt="Apply Now">
+                <h3>APPLY NOW ➝</h3>
+                <p>100% of undergrad students receive scholarships—claim yours!</p>
+            </div>
+            <div class="step">
+                <img src="ScheduleAVisit.png" alt="Schedule a Visit">
+                <h3>SCHEDULE A VISIT ➝</h3>
+                <p>Visit in person or schedule a virtual tour to check out our campus.</p>
+            </div>
+            <div class="step">
+                <img src="Explore.png" alt="Explore Majors">
+                <h3>EXPLORE MAJORS ➝</h3>
+                <p>Explore 36 majors and craft a modern education with a Christian foundation.</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="LoginPage.html" class="footer-login">Login Majors</a> |
+                <a href="Privacy-Policy.pdf">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="HELP.html">Contact Us</a>
+            </div>
+            <p>&copy; 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
+        </footer>    
+
+</body>
+</html>
