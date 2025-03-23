@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Life at HLGU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            padding-bottom: 60px;
+            /* Height of the footer */
+            min-height: calc(100vh - 60px);
+            /* Ensure content fills remaining space */
+        }
+
+        .navbar {
+            background-color: rgb(1, 1, 62);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative;
+            background: url('Pic/STLBackground.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 5%;
+            background-color: rgba(88, 7, 7, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            max-height: 470px;
+            max-width: 400px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 90px 0;
+            font-size: 70px;
+        }
+
+        .student-life-intro h2 {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        .student-life-description p {
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+
+        .student-life-section p {
+            font-size: 15px;
+            color: #333;
+            text-align: center;
+        }
+
+        .hero h2,
+        .hero p {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 60px 0;
+            font-size: 25px;
+            text-align: center;
+            /* Add this to center Hero text */
+        }
+
+        .footer {
+            background-color: rgb(1, 1, 62);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            position: relative;
+            /* Make it relative */
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            color: rgba(146, 9, 9, 0.8);
+        }
+
+        /* Tablet and smaller devices */
+        @media screen and (max-width: 992px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+        }
+
+        /* Mobile devices */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+        }
+
+        .student-life-intro {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .student-life-sections {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .student-life-section {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto;
+        }
+
+        .student-life-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .student-life-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .student-life-title {
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        .student-life-description {
+            padding: 10px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            word-break: break-word;
+            /* Allow long words to break */
+        }
+
+        .dark-blue-strip {
+            background-color: rgb(1, 1, 62);
+            height: 30px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrapper">
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="Pic/hlgu-logo.png" alt="HLGU Logo" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="Finished Pages/index.html">Home</a></li>
+                <li><a href="Finished Pages/ADMISSIONS.html">Admissions</a></li>
+                <li><a href="Finished Pages/ACADEMICS.html">Academics</a></li>
+                <li><a href="Finished Pages/ATHLETICS.html">Athletics</a></li>
+                <li><a href="GIVING.html">Alumni</a></li>
+                <li><a href="HELP.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1><b>Student Life</b></h1>
+                <p>Experience the vibrant and supportive community that makes HLGU home. Get involved, connect, and thrive!</p>
+            </div>
+        </section>
+
+        <!-- Dark Blue Strip -->
+        <div class="dark-blue-strip"></div>
+
+        <!-- Introduction Section -->
+        <section class="student-life-intro">
+            <h2>Discover Your Home Away From Home</h2>
+            <p>At Hannibal-LaGrange University, student life is about more than just attending classes. It's about creating lasting memories, building lifelong friendships, and growing as an individual in a Christ-centered environment. From exciting campus events to a wide array of clubs and organizations, there's something for everyone to enjoy and get involved in.</p>
+        </section>
+
+        <!-- Dark Blue Strip -->
+        <div class="dark-blue-strip"></div>
+
+        <!-- Student Life Sections -->
+        <section class="student-life-sections">
+            <div class="student-life-section">
+                <img src="Pic/CampusActivitiesAndEvents.jpg" alt="Campus Activities" class="student-life-image">
+                <h3 class="student-life-title">Campus Activities & Events</h3>
+                <p class="student-life-description">Enjoy a wide range of events, from concerts and movie nights to special holiday celebrations. Get involved and make memories that will last a lifetime!</p>
+            </div>
+
+            <div class="student-life-section">
+                <img src="Pic/ClubsAndOrganizations.jpg" alt="Clubs & Organizations" class="student-life-image">
+                <h3 class="student-life-title">Clubs & Organizations</h3>
+                <p class="student-life-description">Join a club that fits your interests! HLGU offers a diverse range of student-led organizations, from academic groups to social and service-oriented clubs.</p>
+            </div>
+
+            <div class="student-life-section">
+                <img src="Pic/Housing.jpg" alt="Housing" class="student-life-image">
+                <h3 class="student-life-title">Housing & Residence Life</h3>
+                <p class="student-life-description">Make yourself at home in our comfortable and welcoming residence halls. Experience community living and build friendships that will last a lifetime.</p>
+            </div>
+
+            <div class="student-life-section">
+                <img src="Pic/StudentSupportServices.jpg" alt="Student Services" class="student-life-image">
+                <h3 class="student-life-title">Student Support Services</h3>
+                <p class="student-life-description">HLGU is committed to supporting your academic, personal, and spiritual growth. Take advantage of our resources, including counseling services, career services, and academic advising.</p>
+            </div>
+
+            <!-- Add more sections here, adapting titles and descriptions as needed.  Refer to the HLGU Student Life webpage for ideas. -->
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="Finished Pages/LoginPage.html" class="footer-login">Login Majors</a> |
+            <a href="Privacy-Policy.pdf">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="HELP.html">Contact Us</a>
+        </div>
+        <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

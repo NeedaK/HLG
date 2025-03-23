@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            padding-bottom: 60px;
+            min-height: calc(100vh - 60px);
+        }
+
+        .navbar {
+            background-color: rgb(1, 1, 62);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative;
+            background: url('Pic/AcademicBackground.jpg') no-repeat center center/cover;
+            padding-left: 60%;
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 5%;
+            background-color: rgba(88, 7, 7, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            max-height: 470px;
+            max-width: 400px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 90px 0;
+            font-size: 70px;
+        }
+
+        .hero h2,
+        .hero p {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 60px 0;
+            font-size: 25px;
+        }
+
+        .main-content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .departments-column {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .departments-column h2 {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        .achievements-column {
+            flex: 1;
+        }
+
+        .collapsible {
+            background-color: rgb(1, 1, 62);
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: rgb(1, 1, 37);
+            color: white;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #333;
+        }
+
+       .content img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            float: left;
+        }
+
+        .achievements-section {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 90%;
+        }
+
+        .achievements-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        .achievements-section h3 {
+            font-size: 22px;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+        }
+
+        .achievements-section p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .achievement-item {
+            margin-bottom: 15px;
+        }
+
+        .link {
+            display: block;
+            text-align: right;
+            font-size: 14px;
+            color: rgb(1, 1, 62);
+        }
+
+        .footer {
+            background-color: rgb(1, 1, 62);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .footer {
+            background-color: rgb(1, 1, 62); /* Matches existing footer color */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            color: rgba(146, 9, 9, 0.8); /* Highlight color on hover */
+        }
+
+        /* Style specifically for the Login link */
+        .footer-login {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        @media screen and (max-width: 992px) {
+            .main-content-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+        }
+
+        .achievements-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-section {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .question {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        .question-text {
+            font-size: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .dark-blue-strip {
+            background-color: rgb(1, 1, 62);
+            height: 30px;
+            width: 100%;
+        }
+          /* Styles for the image inside content div*/
+        .content img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="Pic/hlgu-logo.png" alt="HLGU Logo" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ADMISSIONS.html">Admissions</a></li>
+            <li><a href="ATHLETICS.html">Athletics</a></li>
+            <li><a href="STUDENT.LIFE.html">Student Life</a></li>
+            <li><a href="GIVING.html">Alumni</a></li>
+            <li><a href="HELP.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1><b>Academics</b></h1>
+                <p>Discover degree programs, faculty contacts, academic resources, and key dates at Hannibal-LaGrange University.</p>
+            </div>
+        </section>
+
+         <!-- Dark Blue Strip -->
+         <div class="dark-blue-strip"></div>
+
+         <div class="question-section">
+            <p class="question"><em>Why choose HLGU Academics?</em></p>
+            <p class="question-text">Hannibal-LaGrange University provides a transformative academic experience, blending faith-based learning with rigorous academic inquiry.  Our dedicated faculty are committed to nurturing your intellectual growth and preparing you for success in your chosen field.</p>
+        </div>
+    
+        <!-- Dark Blue Strip -->
+        <div class="dark-blue-strip"></div>
+
+        <div class="main-content-container">
+
+            <!-- Left Column: Academic Departments -->
+            <div class="departments-column">
+                <h2>Explore Our Academic Departments</h2>
+                <button type="button" class="collapsible">Art</button>
+                <div class="content">
+                  <img src="Pic/ART.jpg" alt="Art Department">
+                  <p>Explore courses in art history, art appreciation, art education, crafts, and design. In-studio areas include ceramics, computer graphics, drawing, painting, photography, printmaking, and sculpture.</p>
+              </div>
+
+              <button type="button" class="collapsible">Behavioral Science</button>
+              <div class="content">
+                  <img src="Pic/BehavioralScience.webp" alt="Behavioral Science">
+                  <p>Prepares students for service in various agency and institutional settings and for graduate study in psychology, counseling, social work, sociology, human services, and related disciplines.</p>
+              </div>
+
+              <button type="button" class="collapsible">Business</button>
+              <div class="content">
+                  <img src="Pic/Business.jpg" alt="Business Department">
+                  <p>Allows students to select a concentration in agribusiness, data analysis, financial planning, or management, customizing their path for the career they're aiming for.</p>
+              </div>
+
+              <button type="button" class="collapsible">Christian Studies</button>
+              <div class="content">
+                  <img src="Pic/Christian Studies.jpg" alt="Christian Studies Department">
+                  <p>Promotes the academic study of the Bible, biblical languages, Christian education, Christian ministry, intercultural missions, and theology. Equips students for effective service in pastoral, educational, denominational, missions, and other ministries.</p>
+              </div>
+
+              <button type="button" class="collapsible">Communication Studies</button>
+              <div class="content">
+                  <img src="Pic/CommunicationStudies.jpg" alt="Communication Studies Department">
+                  <p>Offers both generalist and specialized approaches, providing a comprehensive and contemporary program for students interested in media communication-related careers or graduate studies.</p>
+              </div>
+
+              <button type="button" class="collapsible">Computer Sciences</button>
+              <div class="content">
+                  <img src="Pic/ComputerSciences.png" alt="Computer Sciences Department">
+                  <p>Provides an excellent professional education in computers and technology within a distinctively Christian environment, integrating faith and learning to prepare graduates for personal and career effectiveness.</p>
+              </div>
+
+              <button type="button" class="collapsible">Criminal Justice</button>
+              <div class="content">
+                  <img src="Pic/CriminalJustice.jpg" alt="Criminal Justice Department">
+                  <p>Offers a rewarding academic experience suitable for students pursuing careers in law enforcement, probation and parole, community-based prevention and control programs, court-based programs, and corrections.</p>
+              </div>
+
+              <button type="button" class="collapsible">Education</button>
+              <div class="content">
+                  <img src="Pic/Education.jpg" alt="Education Department">
+                  <p>Gives students the opportunity to make a lasting, positive impact through teaching. HLGU graduates have received local, state, and national recognition for their contributions to the teaching profession.</p>
+              </div>
+
+              <button type="button" class="collapsible">English</button>
+              <div class="content">
+                  <img src="Pic/English.jpg" alt="English Department">
+                  <p>Strives to provide a framework for excellence in literary analysis, writing effectiveness, and linguistic inquiry. Faculty help students develop writing skills and foster critical thinking through the analysis and interpretation of literature.</p>
+              </div>
+
+              <button type="button" class="collapsible">Exercise and Sport Science</button>
+              <div class="content">
+                  <img src="Pic/ExerciseandSport Science.png" alt="Exercise and Sport Science Department">
+                  <p>Comprises departments that study various aspects of human physical activity related to sports and leisure, including exercise science and sport and recreation management.</p>
+              </div>
+
+              <button type="button" class="collapsible">History</button>
+              <div class="content">
+                  <img src="Pic/History.jpg" alt="History Department">
+                  <p>Educates students on the impact of human history on the contemporary world. Graduates work in fields such as private business, government, archives, museums, national parks, and vocational Christian ministry, or pursue graduate studies.</p>
+              </div>
+
+              <button type="button" class="collapsible">Mathematics</button>
+              <div class="content">
+                  <img src="Pic/Mathematics.jpg" alt="Mathematics Department">
+                  <p>Helps students broaden their mathematical awareness and problem-solving abilities, enabling a better understanding of God’s creation. Prepares mathematics majors for graduate study or careers requiring expertise in mathematics.</p>
+              </div>
+
+              <button type="button" class="collapsible">Music</button>
+              <div class="content">
+                  <img src="Pic/Music.jpg" alt="Music Department">
+                  <p>Designed for students interested in instrumental or vocal study, preparing them for graduate school or performance-based careers in music.</p>
+              </div>
+
+              <button type="button" class="collapsible">Natural Science</button>
+              <div class="content">
+                  <img src="Pic/NaturalScience.webp" alt="Natural Science Department">
+                  <p>Includes programs in biology, chemistry, and general science, preparing students for science-related careers or postgraduate education.</p>
+              </div>
+
+              <button type="button" class="collapsible">Nursing</button>
+              <div class="content">
+                  <img src="Pic/Nursing.jpg" alt="Nursing Department">
+                  <p>The Craigmiles School of Nursing offers several paths toward a nursing career, including a certificate in practical nursing, Associate of Science in Nursing (ASN), or Bachelor of Science in Nursing Degree for RNs (RN to BSN).</p>
+              </div>
+
+              <button type="button" class="collapsible">Theatre</button>
+              <div class="content">
+                  <img src="Pic/Theatre.webp" alt="Theatre Department">
+                  <p>Offers programs designed to prepare students for careers in various drama-related fields, providing comprehensive studies and practical experiences for those interested in immediate careers or graduate studies in theatre.</p>
+              </div>
+            </div>
+
+            <!-- Right Column: Achievements Section -->
+            <div class="achievements-column">
+                <section class="achievements-section">
+                    <h2>Hannibal-LaGrange University Academic Achievements</h2>
+
+                    <div class="achievement-item">
+                        <h3>Institutional Excellence & Accreditation</h3>
+                        <p><strong>Accreditation Restored:</strong> In November 2024, the Higher Learning Commission (HLC) removed HLGU from probation, recognizing the university’s substantial progress in financial stability, enrollment growth, and budget management.</p>
+                        <p><strong>Recognized for Institutional Turnaround:</strong> The HLC praised HLGU for its commitment to responsible financial practices, student-focused initiatives, and long-term sustainability.</p>
+                    </div>
+
+                    <div class="achievement-item">
+                        <h3>Academic Recognition & Scholarships</h3>
+                        <p><strong>Founder's Scholarship Program:</strong> HLGU offers the Founder's Scholarship, a prestigious full-tuition scholarship awarded to outstanding incoming freshmen who demonstrate exceptional academic performance and leadership.</p>
+                        <p><a class="link" href="https://www.hlg.edu/admissions/hlgu-financial-aid/undergraduate-students/freshman-scholarships/">→Learn More About Scholarships</a></p>
+                    </div>
+
+                    <div class="achievement-item">
+                        <h3>National Rankings & Recognition</h3>
+                        <p><strong>Ranked Among Top Regional Colleges:</strong> HLGU was ranked #53 in the Midwest Regional Colleges category in the 2025 U.S. News & World Report Best Colleges rankings. This recognition reflects HLGU’s commitment to academic excellence, student success, and faculty expertise.</p>
+                        <p><a class="link" href="https://www.usnews.com/best-colleges/hannibal-lagrange-9089">→See the Ranking</a></p>
+                    </div>
+                    <!-- Add image -->
+                    <img src="Pic/AcademicAchievements.jpg" alt="Academic Achievements" class="achievements-image">
+                </section>
+            </div>
+
+        </div>
+        <!-- End main-content-container -->
+    </div>
+    <!-- End content-wrapper -->
+
+    <!-- Add a spacer div right before the footer -->
+    <div class="footer-spacer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="Finished Pages/LoginPage.html" class="footer-login">Login Majors</a> |
+            <a href="Privacy-Policy.pdf">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="HELP.html">Contact Us</a>
+        </div>
+        <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

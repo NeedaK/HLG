@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLGU - Alumni & Giving</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            padding-bottom: 60px;
+            min-height: calc(100vh - 60px);
+        }
+
+        .navbar {
+            background-color: rgb(1, 1, 62);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative;
+            background: url('Pic/AluminiBackground.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 5%;
+            background-color: rgba(88, 7, 7, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            max-height: 470px;
+            max-width: 400px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 90px 0;
+            font-size: 70px;
+        }
+
+        .hero h2,
+        .hero p {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 60px 0;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: rgb(1, 1, 62); /* Matches existing footer color */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            color: rgba(146, 9, 9, 0.8); /* Highlight color on hover */
+        }
+
+        /* Style specifically for the Login link */
+        .footer-login {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Tablet and smaller devices */
+        @media screen and (max-width: 992px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+        }
+
+        /* Mobile devices */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+        }
+
+        .alumni-intro {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .alumni-sections {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .alumni-section {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .alumni-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .alumni-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .alumni-title {
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        /* Style for the Tab Links */
+        .tablink {
+            background-color: rgb(1, 1, 62);
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 20px 16px;
+            font-size: 20px;
+            width: 100%;
+            text-align: left;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tablink p {
+            font-size: 16px;
+            color: #ddd;
+            margin: 0;
+            text-align: right;
+            flex: 0 0 40%;
+            word-break: break-word;
+        }
+
+        .tablink:hover {
+            background-color: rgba(88, 7, 7, 0.8);
+        }
+
+        /* Style for the Tab Content */
+        .tabcontent {
+            color: black;
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .dark-blue-strip {
+            background-color: rgb(1, 1, 62);
+            height: 30px;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        /* Style for the Alumni section Header Paragraph */
+        .alumni-sections > p {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .tabcontent a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .tabcontent a:hover {
+            text-decoration: underline;
+        }
+
+        .tabcontent ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .tabcontent li {
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+
+        .tabcontent ul li b {
+            font-weight: bold;
+        }
+
+        .tabcontent .address {
+            margin-top: 5px;
+            font-style: normal;
+        }
+
+        /*Style for Event Listings */
+        .event-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .event-list li {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .event-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .event-date {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .event-description {
+            color: #333;
+        }
+
+        .event-description a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .event-description a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styles for Subscribe Form */
+        .subscribe-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .subscribe-form input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        .subscribe-form button {
+            padding: 10px 20px;
+            background-color: rgb(1, 1, 62);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .subscribe-form button:hover {
+            background-color: rgba(88, 7, 7, 0.8);
+        }
+
+        /* Styles for Subscribe Box */
+        .subscribe-box {
+            background-color: rgba(255, 0, 0, 0.2);
+            /* Red with 20% opacity */
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            /* Ensures the box only takes up the content width */
+        }
+
+        /* Styles for Alumni Spotlight Section */
+        .alumni-spotlight {
+            text-align: left;
+            /* Align content to the left */
+        }
+
+
+        .alumni-spotlight p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .alumni-spotlight a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .alumni-spotlight a:hover {
+            text-decoration: underline;
+        }
+
+        .alumni-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* Style for the event and the box behind it */
+        .events-container {
+            display: flex;
+            align-items: flex-start;
+            /* Align items at the top */
+            justify-content: space-between;
+            /* Put space between events and image */
+        }
+
+        .events-text {
+            flex: 1;
+            /* Take up remaining space */
+            padding-right: 20px;
+            /* Add spacing to the right of the events */
+        }
+
+        .events-image {
+            flex-shrink: 0;
+            /* Prevent image from shrinking */
+            max-width: 40%;
+            /* Set a maximum width for the image */
+            height: auto;
+        }
+
+        .events-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            /* Remove default inline spacing */
+        }
+
+        /* Give Back Tab Layout */
+        .give-back-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* Align top to avoid image stretching */
+        }
+
+        .give-back-text {
+            flex: 1;
+            padding-right: 20px;
+            /* Add space between text and image */
+        }
+
+        .give-back-image {
+            flex-shrink: 0;
+            max-width: 40%;
+            height: auto;
+             order:-1; /* Pushes the image to the left */
+        }
+
+        .give-back-container .areas-to-support {
+          float: none;
+        }
+
+        .areas-to-support-container {
+          display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+        }
+
+        .areas-to-support-image {
+            flex-shrink: 0;
+            max-width: 40%;
+            height: auto;
+
+
+
+        }
+
+            .areas-to-support-container .areas-to-support-text{
+               flex: 1;
+               width: 60%;
+
+            }
+
+                 /* Add space between images and text in Give Back Tab */
+        .give-back-container > div,
+        .areas-to-support-container > div {
+            margin-bottom: 20px; /* Add space below each main section */
+        }
+
+        /* Add space between Ways to Give Image and Areas to Support */
+        .areas-to-support-container {
+            margin-top: 20px; /* Adjust as needed */
+        }
+             /* Styles for all h3 tags within tab content*/
+        .tabcontent h3, .alumni-image h3 {
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        /* Styles for all h4 tags within tab content*/
+        .tabcontent h4 {
+            font-size: 16px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="Pic/hlgu-logo.png" alt="HLGU Logo" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="ADMISSIONS.html">Admissions</a></li>
+                <li><a href="ACADEMICS.html">Academics</a></li>
+                <li><a href="ATHLETICS.html">Athletics</a></li>
+                <li><a href="STUDENT.LIFE.html">Student Life</a></li>
+                <li><a href="HELP.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Alumni & Giving</h1>
+                <p>Stay connected with Hannibal-LaGrange University. Discover alumni events, giving opportunities, and ways to support future generations.</p>
+            </div>
+        </section>
+
+        <!-- Dark Blue Strip -->
+        <div class="dark-blue-strip"></div>
+
+        <!-- Alumni Introduction -->
+        <section class="alumni-intro">
+            <h2>Welcome Alumni!</h2>
+            <p>As a graduate of Hannibal-LaGrange University, you are a vital part of our community. Stay connected, rediscover old friendships, and help us shape the future of HLGU.</p>
+        </section>
+
+        <!-- Dark Blue Strip -->
+        <div class="dark-blue-strip"></div>
+
+        <section class="alumni-sections">
+            <h2>Explore Alumni Opportunities</h2>
+            <p><b>Stay Connected, Make an Impact, and Celebrate Trojan Success.</b> Whether you're looking to reconnect with classmates, support future students, or stay updated on alumni events and milestones, HLGU offers meaningful ways to engage. Discover opportunities to grow your network, give back, and be inspired by the achievements of fellow graduates.</p>
+
+            <!-- Alumni Sections as Tabs -->
+
+            <!-- Alumni Connect Section -->
+            <!-- Alumni Connect Section -->
+            <div class="alumni-section">
+                <button class="tablink" onclick="openTab(event, 'Connect')">
+                    Alumni Connect
+                    <p>Reconnect with fellow Trojans and expand your network.</p>
+                </button>
+                <div id="Connect" class="tabcontent">
+                    <h3><b>Expand Your Network and Stay Connected with Fellow Trojans!</b></h3>
+                    <img src="Pic/AlumniConnect.jpg" alt="HLGU Picture" class="alumni-image">
+                    <p>HLGU Alumni Connect is more than just a platform — it’s your gateway to a lifelong Trojan community. Reconnect with classmates, rekindle meaningful friendships, and stay in the loop with career milestones, life updates, and exclusive alumni-only resources. Whether you’re just starting your career, changing paths, or looking to mentor others, Alumni Connect helps you build valuable relationships that last a lifetime.</p>
+                    <p>Did you know HLGU has alumni living and working in cities all around the world? No matter where life takes you, chances are a fellow Trojan isn’t far away. Find and connect with others in your area or professional field — you never know where the next opportunity or friendship might come from.</p>
+                    <p>Have questions or want to get involved?</p>
+                    <p>Reach out to us at <a href="mailto:Alumni@hlgu.edu">Alumni@hlgu.edu</a> — we’d love to hear from you!</p>
+                </div>
+            </div>
+
+
+            <!-- Give Back to HLGU Section -->
+            <div class="alumni-section">
+                <button class="tablink" onclick="openTab(event, 'Give')">
+                    Give Back to HLGU
+                    <p>Invest in the future of HLGU and its students.</p>
+                </button>
+                <div id="Give" class="tabcontent">
+                    <p>Invest in the future of HLGU and its students! Your generosity can help provide scholarships, enhance academic programs, and improve campus facilities.</p>
+                    <p>Every gift, big or small, makes a difference in the lives of our students.</p>
+
+                    <div class = "give-back-container">
+                      <div class = "give-back-image">
+                            <img src="Pic/GiveBacktoHLGU.jpg" alt="HLGU Logos" class="alumni-image">
+                        </div>
+                        <div class = "give-back-text">
+                               <h3>Ways to Give:</h3>
+                                <ul>
+                                    <li><b>Online:</b> Make a secure gift online through our <a href="https://www.hlg.edu/alumni/give-to-hlgu/">Online Giving Form</a>.</li>
+                                    <li><b>By Mail:</b> Send a check payable to Hannibal-LaGrange University to:
+                                        <div class="address">
+                                            Hannibal-LaGrange University<br>
+                                            2800 Palmyra Road<br>
+                                            Hannibal, MO 63401
+                                        </div>
+                                    </li>
+                                    <li><b>By Phone:</b> Call our Advancement Office at (573) 629-3126 to make a gift over the phone.</li>
+                                    <li><b>Planned Giving:</b> Consider including HLGU in your estate plans. <a href="#">Learn more about planned giving options.</a></li>
+                                    <li><b>Gifts of Stock:</b> Donate appreciated stock to HLGU for potential tax benefits. Contact the Advancement Office for transfer instructions.</li>
+                                </ul>
+                         </div>
+
+
+                   </div>
+                   <div class = "areas-to-support-container">
+                        <div class = "areas-to-support-text">
+                                   <h3>Areas to Support:</h3>
+                                    <ul>
+                                        <li><b>The HLGU Fund:</b> Provides unrestricted support for the University's greatest needs.</li>
+                                        <li><b>Scholarships:</b> Help make an HLGU education accessible to deserving students.</li>
+                                        <li><b>Academic Programs:</b> Support specific departments and programs, such as Nursing, Education, or Music.</li>
+                                        <li><b>Athletics:</b> Contribute to the success of our Trojan athletic teams.</li>
+                                        <li><b>Capital Projects:</b> Help us improve campus facilities and infrastructure.</li>
+                                    </ul>
+                     </div>
+                    <div class = "areas-to-support-image">
+                               <img src="Pic/GiveBack2HLGU.jpg" alt="Area to support painting" class="alumni-image">
+                    </div>
+
+                  </div>
+                    <p style = "text-align: center">Your gift, no matter the size, is an investment in the lives of our students and the future of Hannibal-LaGrange University. <a href="https://www.hlg.edu/alumni/give-to-hlgu/">Donate Now!</a></p>
+                </div>
+            </div>
+
+            <!-- Alumni News & Events Section -->
+            <div class="alumni-section">
+                <button class="tablink" onclick="openTab(event, 'News')">
+                    Alumni News & Events
+                    <p>Stay informed about the latest happenings at HLGU.</p>
+                </button>
+                <div id="News" class="tabcontent">
+                    <h3><b>Stay Connected with HLGU Alumni Events!</b></h3>
+                    <p>Reconnect with fellow Trojans, celebrate achievements, and support HLGU by attending our engaging alumni events. We host a variety of activities throughout the year, both on and off campus.</p>
+                    <div class="events-container">
+                        <div class="events-text">
+                            <p>Here are some upcoming events:</p>
+
+                            <ul class="event-list">
+                                <li>
+                                    <div class="event-title">Homecoming Weekend</div>
+                                    <div class="event-date">October 25-27, 2024</div>
+                                    <div class="event-description">Join us for a weekend of fun, fellowship, and Trojan spirit! Includes alumni gatherings, athletic events, and campus tours. <a href="#">Learn more and register.</a></div>
+                                </li>
+                                <li>
+                                    <div class="event-title">Alumni Christmas Gathering</div>
+                                    <div class="event-date">December 7, 2024</div>
+                                    <div class="event-description">Celebrate the holidays with fellow HLGU alumni. Enjoy festive music, delicious food, and warm fellowship. <a href="#">RSVP here.</a></div>
+                                </li>
+                                <li>
+                                    <div class="event-title">Spring Alumni Reception</div>
+                                    <div class="event-date">April 12, 2025</div>
+                                    <div class="event-description">Reconnect with HLGU in a setting that brings together the past, present and future. <a href="#">RSVP here.</a></div>
+                                </li>
+
+                            </ul>
+
+                            <p>For a complete list of alumni events and to register, please visit the <a href="https://www.hlg.edu/alumni/alumni-events/">HLGU Alumni Events Page</a>.</p>
+                        </div>
+                        <div class="events-image">
+                            <img src="Pic/AlumniNewsAndEvents.png" alt="Alumni News and Events">
+                        </div>
+                    </div>
+                     <div class="subscribe-form">
+                        <div class = "subscribe-box">
+                            <p><b>Subscribe to Alumni News & Events</b></p>
+                            <p>Enter your email address to receive updates on upcoming events and alumni news:</p>
+                            <input type="email" placeholder="Your Email Address">
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                    <p style = "text-align:center">Don't forget to update your contact information to receive event invitations and alumni news! <a href="#">Update Your Information</a></p>
+                </div>
+            </div>
+
+            <!-- Alumni Success Stories Section -->
+            <div class="alumni-section">
+                <button class="tablink" onclick="openTab(event, 'Success')">
+                    Alumni Success Stories
+                    <p>Read inspiring stories from fellow HLGU graduates.</p>
+                </button>
+                <div id="Success" class="tabcontent alumni-spotlight">
+                    <h3><b>Shine a Light on Your Success!</b></h3>
+                <img src="Pic/AlumniSuccessStories.jpg" alt="Alumni Success Stories" class="alumni-image">
+                    <p>HLGU is proud of our alumni and their accomplishments! This is your opportunity to share your journey, inspire fellow Trojans, and connect with the HLGU community.</p>
+
+                    <h4><b>Share Your Story:</b></h4>
+
+                    <p>Have you achieved a professional milestone, made a difference in your community, or have an inspiring story to share? We want to hear from you!</p>
+
+                    <h4><b>To submit your story for consideration:</b></h4>
+                    <ul>
+                        <li>Write a brief summary of your accomplishment or story (200-300 words).</li>
+                        <li>Include a high-resolution photo of yourself.</li>
+                        <li>Email your submission to: <a href="mailto:Alumni@hlgu.edu">Alumni@hlgu.edu</a> with the subject line "Alumni Spotlight Submission."</li>
+                    </ul>
+
+                    <h4><b>Read Inspiring Stories:</b></h4>
+                     <p style = "text-align:center">Check back regularly to read about the incredible achievements and inspiring stories of your fellow HLGU alumni!</p>
+
+                    <p style = "text-align:center">If you are looking to find other Alumni go to this location <a href="#">Alumni Spot light</a> </p>
+            </div>
+        </section>
+    </div>
+    <!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="Finished Pages/LoginPage.html" class="footer-login">Login Majors</a> |
+            <a href="Privacy-Policy.pdf">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="HELP.html">Contact Us</a>
+        </div>
+        <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Javascript for Tabs Function -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Open first tab by default
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if tablinks exist before clicking
+            var tabLinks = document.querySelectorAll('.tablink');
+            if (tabLinks.length > 0) {
+                tabLinks[0].click();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

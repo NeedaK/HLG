@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athletics at HLGU</title>
+    <link rel="stylesheet" href="CSSALL.css">
+    <style>
+        .hero {
+            background: url('Pic/AthleticsBackground.webp') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative;
+            padding-right: 60%;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .athletics-intro {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .benefit h3 {
+            font-size: 24px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        .athletics-benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+            grid-template-rows: repeat(2, 1fr); /* Create 2 rows */
+            gap: 20px; /* Add gaps between the sections */
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            position: relative;  /* Make this relative for the blur */
+        }
+
+        .athletics-benefits::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Pic/SEAL.jpg') no-repeat center center/cover;  /* Use the same background as the hero, or a different one */
+            filter: blur(8px); /* Adjust blur as needed */
+            z-index: -1;
+        }
+
+        .benefit-section {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex; /* Use flexbox for image and text */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: auto; /* Allow content to determine width */
+            height: auto; /* Allow content to determine height */
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for content readability */
+            position: relative; /* Ensure content is above the blur */
+            z-index: 1; /* Ensure content is above the blur */
+        }
+
+        .benefit-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* or contain, depending on your preference */
+        }
+
+        .benefit-content {
+            padding: 15px;
+        }
+
+        .benefit-content h3 {
+            font-size: 22px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        .benefit-content p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .btn-learn-more {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 72px;
+            background-color: rgb(1, 1, 62);
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn-learn-more:hover {
+            background-color: rgb(1, 1, 37);
+            color: #fff;
+        }
+
+        .dark-blue-strip {
+            background-color: rgb(1, 1, 62);
+            height: 30px;
+            width: 100%;
+        }
+
+        .sports-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .sport {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .sport:hover {
+            transform: translateY(-5px);
+        }
+
+        .sport img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .sport h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+        }
+        
+        .footer {
+            background-color: rgb(1, 1, 62); /* Matches existing footer color */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            color: rgba(146, 9, 9, 0.8); /* Highlight color on hover */
+        }
+
+        /* Style specifically for the Login link */
+        .footer-login {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="Pic/hlgu-logo.png" alt="HLGU Logo" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ADMISSIONS.html">Admissions</a></li>
+            <li><a href="ACADEMICS.html">Academics</a></li>
+            <li><a href="STUDENT.LIFE.html">Student Life</a></li>
+            <li><a href="GIVING.html">Alumni</a></li>
+            <li><a href="HELP.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1><b>Athletics</b></h1>
+            <p>Elevate your college experience!  Compete, connect, and build character through HLGU Athletics.</p>
+        </div>
+    </section>
+
+    <!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+    <!-- Introduction Section -->
+    <section class="athletics-intro">
+        <h2>Join the Trojan Family: A Winning Tradition</h2>
+        <p>At Hannibal-LaGrange University, athletics is more than just games; it's about developing well-rounded individuals who excel both on and off the field. We are committed to providing a supportive and Christ-centered environment where athletes can reach their full potential. Discover a community that values teamwork, sportsmanship, and academic excellence.</p>
+    </section>
+
+    <!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+    <!-- Benefits Section Title -->
+    <h2 class="benefits-title">Why Choose HLGU Athletics?</h2>
+
+    <!-- Benefits Section -->
+    <section class="athletics-benefits">
+        <div class="benefit-section">
+            <img src="Pic/CompetitiveTeams.webp" alt="Men's Soccer" class="benefit-image">
+            <div class="benefit-content">
+                <h3>Competitive Teams</h3>
+                <p>Participate in a wide range of sports at the NAIA level.  Showcase your talent and compete against top athletes.</p>
+            </div>
+        </div>
+
+        <div class="benefit-section">
+            <img src="Pic/Facilities.webp" alt="Women's Basketball" class="benefit-image">
+            <div class="benefit-content">
+                <h3>Outstanding Facilities</h3>
+                <p>Train in state-of-the-art facilities designed to enhance your performance and support your athletic development.</p>
+            </div>
+        </div>
+
+        <div class="benefit-section">
+            <img src="Pic/DedicatedCoaches.jpg" alt="Women's Basketball" class="benefit-image">
+            <div class="benefit-content">
+                <h3>Dedicated Coaches</h3>
+                <p>Learn from experienced and passionate coaches who are committed to your athletic and personal growth.</p>
+            </div>
+        </div>
+
+        <div class="benefit-section">
+            <img src="Pic/AcademicSupport.jpg" alt="Women's Basketball" class="benefit-image">
+            <div class="benefit-content">
+                <h3>Academic Support</h3>
+                <p>Receive the resources and support you need to succeed in the classroom while balancing your athletic commitments.</p>
+        </div>
+    </div>
+
+        <div class="benefit-section">
+            <img src="Pic/Community.jpg" alt="Women's Basketball" class="benefit-image">
+            <div class="benefit-content">
+                <h3>Community & Camaraderie</h3>
+                <p>Become part of a close-knit team and a supportive campus community.  Forge lasting friendships and create unforgettable memories.</p>
+        </div>
+    </div>
+
+        <div class="benefit-section">
+            <img src="Pic/Character Development.jpg" alt="Women's Basketball" class="benefit-image">
+            <div class="benefit-content">
+                <h3>Character Development</h3>
+                <p>Develop leadership skills, discipline, and a strong work ethic. Learn values that will serve you well throughout your life.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+    <!-- Call to Action -->
+    <section class="athletics-intro">
+        <h2>Ready to become a Trojan?</h2>
+        <p>Explore our athletic programs, view team schedules, and discover how you can join the HLGU Trojan family. Contact our athletic department today to learn more about opportunities and recruitment.</p>
+        <a href="https://hlgtrojans.com/index.aspx" class="btn-learn-more">Visit the HLGU Athletics Website</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="Finished Pages/LoginPage.html" class="footer-login">Login Majors</a> |
+            <a href="Privacy-Policy.pdf">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="HELP.html">Contact Us</a>
+        </div>
+        <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

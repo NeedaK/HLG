@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLGU - Contact & About</title>
+    <style>
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            /* Add this for background */
+            background-image: url('Pic/ContactAndAbout.webp');
+            /* Replace with your image path */
+            background-size: cover;
+            /* Cover the entire screen */
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Do not repeat the image */
+            background-attachment: fixed;
+            /* Fixed background */
+        }
+
+        .content-wrapper {
+            flex: 1;
+            padding-bottom: 60px;
+            /* Make space for fixed footer */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* center vertically */
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgb(1, 1, 62);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('Pic/AboutBackground.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative;
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 5%;
+            background-color: rgba(88, 7, 7, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            max-height: 470px;
+            max-width: 400px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 90px 0;
+            font-size: 70px;
+        }
+
+        .hero h2,
+        .hero p {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 60px 0;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: rgb(1, 1, 62); /* Matches existing footer color */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            color: rgba(146, 9, 9, 0.8); /* Highlight color on hover */
+        }
+
+        /* Style specifically for the Login link */
+        .footer-login {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Tablet and smaller devices */
+        @media screen and (max-width: 992px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+        }
+
+        /* Mobile devices */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+        }
+
+        /* New Section Styles - Keeping it distinct from Hero, Navbar etc*/
+        .about-section {
+            width: 800px;
+            margin: 0;
+            /* remove standard margin */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            /* Semi-transparent white for content */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            text-align: center;
+        }
+
+        /* Image Columns Styles */
+        .image-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-column img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-column {
+            text-align: left;
+            /* Reset text alignment for content */
+        }
+
+        /* Text */
+        .about-section h2 {
+            color: #580707;
+            font-size: 2.0em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .about-section h3 {
+            color: #580707;
+            font-size: 1.5em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .about-section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .about-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .about-section ul li {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        /* Links for specific colors */
+        .about-section a {
+            color: #007bff;
+            /* Bootstrap primary color */
+            text-decoration: none;
+            text-align: left;
+        }
+
+        .about-section a:hover {
+            text-decoration: underline;
+            /* For better visual feedback */
+        }
+
+        .dark-blue-strip {
+            background-color: rgb(1, 1, 62);
+            height: 30px;
+            width: 100%;
+        }
+
+        /* New Styles for images*/
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            /*Evenly distributes elements with equal space between them*/
+            align-items: center;
+            /*Aligns items vertically in the container*/
+            margin-bottom: 20px;
+            /*Creates some space between the image and the following elements*/
+        }
+
+        .image-container img {
+            max-width: 300px;
+            /*Sets a maximum width for the images to prevent them from being too large*/
+            height: auto;
+            /*Allows the height to adjust proportionally*/
+            border: 1px solid #ddd;
+            /*Adds a subtle border around the images*/
+            border-radius: 8px;
+            /*Rounds the corners of the images */
+            padding: 5px;
+            /*Adds some space between the image and its border*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /*Adds a subtle shadow to create a sense of depth*/
+        }
+
+        /* Styles for margin images */
+        .margin-images {
+            display: flex;
+            justify-content: space-between;
+            /*Distributes elements with equal space between them*/
+            align-items: center;
+            /*Aligns items vertically in the container*/
+            width: 100%;
+            /*Make sure the container occupies the full width*/
+            padding: 20px;
+        }
+
+        .margin-images img {
+            max-width: 200px;
+            /*Adjust the size to your preference*/
+            height: auto;
+            /*Ensure aspect ratio is
+             maintained*/
+        }
+        .dark-blue-strip {
+            background-color: rgb(1, 1, 62);
+            height: 30px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="Pic/hlgu-logo.png" alt="HLGU Logo" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ADMISSIONS.html">Admissions</a></li>
+            <li><a href="ACADEMICS.html">Academics</a></li>
+            <li><a href="ATHLETICS.html">Athletics</a></li>
+            <li><a href="STUDENT.LIFE.html">Student Life</a></li>
+            <li><a href="GIVING.html">Alumni</a></li>
+         </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Contact & About</h1>
+            <p>Learn about Hannibal-LaGrange University's history, mission, leadership, and campus. Find contact details, directions, and ways to connect with us.</p>
+        </div>
+    </section>
+
+    <!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+    
+    <div class="content-wrapper">
+
+        <section class="about-section">
+
+            <div class="content-column">
+                <h2>About Hannibal-LaGrange University</h2>
+
+                <h3>Our Mission</h3>
+                <p>Hannibal-LaGrange University is a four-year Christian university accredited by the Higher Learning
+                    Commission. With Christ as its foundation, HLGU offers accessible, caring, and challenging
+                    experiences which prepare students for lives of service and leadership.</p>
+
+                <h3>Contact Information</h3>
+                <p>We are available to help. Please see contact information below. </p>
+                <ul>
+                    <li><b>Address:</b> 2800 Palmyra Road, Hannibal, MO 63401</li>
+                    <li><b>Phone:</b> (573) 221-3675</li>
+                    <li><b>Email:</b> <a href="mailto:info@hlgu.edu">info@hlgu.edu</a></li>
+                    <li><b>Website:</b> <a href="https://www.hlg.edu">www.hlg.edu</a></li>
+                </ul>
+
+                <h3>Additional Contact Points</h3>
+                <p>For specific inquiries, please see the following department contact information:</p>
+                <ul>
+                    <li><b>Admissions:</b> (573) 629-3100 | <a
+                            href="mailto:admissions@hlgu.edu">admissions@hlgu.edu</a></li>
+                    <li><b>Financial Aid:</b> (573) 629-3050 | <a
+                            href="mailto:financialaid@hlgu.edu">financialaid@hlgu.edu</a></li>
+                    <li><b>Alumni Office:</b> (573) 629-3126 | <a href="mailto:alumni@hlgu.edu">alumni@hlgu.edu</a>
+                    </li>
+                </ul>
+
+                <h3>Driving Directions</h3>
+                <p>Hannibal-LaGrange University is conveniently located just off of Highway 61 in Hannibal, Missouri.
+                    For driving directions from your location, please use Google Maps or your preferred navigation
+                    app.</p>
+
+                <h3>Connect With Us</h3>
+                <p>Stay connected with HLGU through our social media channels:</p>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="Finished Pages/LoginPage.html" class="footer-login">Login Majors</a> |
+            <a href="Privacy-Policy.pdf">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="HELP.html">Contact Us</a>
+        </div>
+        <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

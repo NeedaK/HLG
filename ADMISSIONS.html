@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions</title>
+
+</head>
+<body>
+    <style>
+        .hero {
+            background: url('Pic/AdmissioncBackground.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative;
+            padding-right: 60%; /* Moves the content to the left */
+            
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Required for absolute positioning of the footer */
+            min-height: 100vh; /* Ensure the body takes the full height */
+        }
+
+        .content-wrapper {
+            padding-bottom: 60px; /* Height of the footer to prevent content overlap */
+            min-height: calc(100vh - 60px);  /* Adjust based on header and footer heights */
+        }
+
+        .navbar {
+            background-color: rgb(1, 1, 62);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Logo */
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 5%; /* Adjust if necessary */
+            background-color: rgba(88, 7, 7, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            max-height: 470px;
+            max-width: 400px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 90px 0;
+            font-size: 70px;
+        }
+
+        .hero h2,
+        .hero p {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 60px 0;
+            font-size: 25px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            gap: 50px;
+        }
+
+        /* Left Column: Why Choose HLGU */
+        .question-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .question {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        .question-text {
+            font-size: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .btn-learn-more {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 72px;
+            background-color: rgb(1, 1, 62);
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn-learn-more:hover {
+            background-color: rgb(1, 1, 37);
+            color: #fff;
+        }
+
+        .info-container {
+            display: flex;
+            align-items: flex-start;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 40px;
+            gap: 50px;
+        }
+
+        /* Right Column: Request for Information */
+        .rfi-section {
+            flex: 1;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            max-width: 50%;
+        }
+
+        .rfi-section h1 {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .rfi-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rfi-form label {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .rfi-form input,
+        .rfi-form select {
+            padding: 10px;
+            font-size: 20px;
+            margin-top: 5px;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 97%;
+        }
+
+        .rfi-form button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: rgba(88, 7, 7, 0.8);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .rfi-form button:hover {
+            background-color: #A52A2A;
+        }
+
+        .dark-blue-strip {
+            background-color: rgb(1, 1, 62);
+            height: 30px;
+            width: 100%;
+        }
+
+        .visit-container {
+            display: flex;
+            flex-direction: column; /* Stacks both sections vertically */
+            align-items: center;
+            gap: 30px;
+            max-width: 60%;
+            margin: auto;
+        }
+
+        /* Trojan Day Section */
+        .trojan-day {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Personal Campus Visit Section */
+        .campus-visit {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            text-align: center;
+        }
+
+        .trojan-day-content h2, .campus-visit h2 {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgba(88, 7, 7, 0.8);
+            text-align: center;
+        }
+
+        .trojan-day-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px; /* Space between image and text */
+        }
+
+        .footer {
+            background-color: rgb(1, 1, 62); /* Matches existing footer color */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            color: rgba(146, 9, 9, 0.8); /* Highlight color on hover */
+        }
+
+        /* Style specifically for the Login link */
+        .footer-login {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+
+        /* Tablet and smaller devices */
+        @media screen and (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .question-section,
+            .rfi-section {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Mobile devices */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+
+            .image-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-gallery img {
+                width: 90%;
+            }
+        }
+    </style>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="Pic/hlgu-logo.png" alt="HLGU Logo" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ACADEMICS.html">Academics</a></li>
+            <li><a href="ATHLETICS.html">Athletics</a></li>
+            <li><a href="STUDENT.LIFE.html">Student Life</a></li>
+            <li><a href="GIVING.html">Alumni</a></li>
+            <li><a href="HELP.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1><b>Admission Gateway</b></h1>
+                <p>Explore the admissions process, program requirements, tuition, and how to apply at Hannibal-LaGrange University.</p>
+            </div>
+        </section>
+
+        <!-- Dark Blue Strip -->
+        <div class="dark-blue-strip"></div>
+
+        <div class="question-section">
+            <p class="question"><em>Why choose HLGU?</em></p>
+            <p class="question-text">No matter where you are on your academic journey—whether you're a recent high school graduate, pursuing a graduate degree, returning to complete your education, transferring credits, or still in high school—HLGU welcomes you.</p>
+            <p class="question-text">At HLGU, students grow both personally and professionally in a uniquely Christian environment, equipping them for success in life and career.</p>
+        </div>
+
+        <!-- Dark Blue Strip -->
+        <div class="dark-blue-strip"></div>
+
+        <main class="info-container">
+            <!-- Request for Information Section -->
+            <section class="rfi-section">
+                <h1><em>Request for Information</em></h1>
+                <p>Please fill out the form below to receive more information about Hannibal-LaGrange University.</p>
+                <form action="PhpAddmission.php" method="post" class="rfi-form">
+                    <label for="full-name">Full Name*</label>
+                    <input type="text" id="full-name" name="full_name" required>
+
+                    <label for="phone">Phone*</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="degree-program">Degree Program*</label>
+                    <select id="degree-program" name="degree_program" required>
+                        <option value="undergraduate">Undergraduate (2-4 yr. degrees)</option>
+                        <option value="graduate">Graduate (Master's Degree)</option>
+                        <option value="degree_completion">Degree Completion</option>
+                        <option value="nursing">Nursing</option>
+                        <option value="international">International Applicants</option>
+                    </select>
+
+                    <label for="address">Address*</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <label for="area-of-interest">Area of Interest (e.g., Business)</label>
+                    <input type="text" id="area-of-interest" name="area_of_interest">
+
+                    <label for="graduation-year">High School Graduation Year*</label>
+                    <input type="number" id="graduation-year" name="graduation_year" required>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+
+            <div class="visit-container">
+                <section class="trojan-day">
+                    <div class="trojan-day-image">
+                        <img src="Pic/TrojanDay.jpg" alt="Future Trojan Days at HLGU">
+                    </div>
+                    <div class="trojan-day-content">
+                        <h2><em>Come Visit Us on Trojan Days</em></h2>
+                        <p>Trojan Day is your opportunity to experience what HLGU has to offer firsthand.
+                            Designed with you and your family in mind, this event allows you to explore campus,
+                            connect with current students, engage with faculty, attend a class, and enjoy lunch in the cafeteria.
+                            Packed with valuable experiences, the day is crafted to help you envision yourself as a Trojan at Hannibal-LaGrange University!</p>
+                    </div>
+                </section>
+
+                <section class="campus-visit">
+                    <h2><em>Personal Campus Visit</em></h2>
+                    <p>We can't wait to meet you and show you around campus! Come connect with the people who make HLGU special and explore the opportunities that await you here. Spend a day with us, and you'll experience the distinctively Christian, high-quality education that makes HLGU stand out.</p>
+                </section>
+            </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="Finished Pages/LoginPage.html" class="footer-login">Login Majors</a> |
+            <a href="Privacy-Policy.pdf">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="HELP.html">Contact Us</a>
+        </div>
+        <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
