@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    padding-bottom: 60px; /* Height of the footer */
+}
+
+.navbar {
+    background-color: rgb(1, 1, 62);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    position: relative;
+}
+
+.hero-content {
+    position: absolute;
+    left: 5%;
+    background-color: rgba(88, 7, 7, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    max-height: 470px;
+    max-width: 400px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 90px 0;
+    font-size: 70px;
+}
+
+.hero h2, .hero p {
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 60px 0;
+    font-size: 25px;
+}
+
+.footer {
+    background-color: rgb(1, 1, 62);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: rgba(146, 9, 9, 0.8);
+}
+
+/* Tablet and smaller devices */
+@media screen and (max-width: 992px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+}
