@@ -150,40 +150,6 @@
             font-size: 1.1em;
         }
 
-        /* Tablet and smaller devices */
-        @media screen and (max-width: 992px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                padding-top: 10px;
-            }
-
-            .nav-links li {
-                margin: 5px 0;
-            }
-        }
-
-        /* Mobile devices */
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                padding-top: 10px;
-            }
-
-            .nav-links li {
-                margin: 5px 0;
-            }
-        }
-
         /* New Section Styles - Keeping it distinct from Hero, Navbar etc*/
         .about-section {
             width: 800px;
@@ -319,6 +285,136 @@
             height: 30px;
             width: 100%;
         }
+
+        /* Tablet and smaller devices */
+        @media screen and (max-width: 992px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+        }
+
+        /* Mobile devices */
+        @media screen and (max-width: 768px) {
+           /*General adjustments for small screens*/
+            body {
+                font-size: 16px; /*Adjust base font size for readability*/
+            }
+
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar h1 {
+                font-size: 20px; /*Smaller title*/
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+                width: 100%;  /*Full width nav links*/
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+                width: 100%; /*Full width list items*/
+            }
+
+             .nav-links a {
+                display: block; /*Make links fill the list item*/
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.2); /*subtle divider*/
+             }
+             .logo {
+                width: 40px; /*Smaller logo*/
+             }
+
+            .hero {
+                height: auto; /*Adjust height*/
+                padding: 20px 0; /*Add vertical padding*/
+            }
+
+            .hero-content {
+                position: static;  /*No longer absolute*/
+                margin: 0 auto;   /*Center the content*/
+                max-width: 90%;   /*Take up most of the screen*/
+                padding: 15px;
+                left: auto;
+                right: auto;
+            }
+
+            .hero h1 {
+                font-size: 40px; /*Smaller hero title*/
+                margin: 30px 0;
+            }
+
+            .hero h2,
+            .hero p {
+                font-size: 18px; /*Smaller hero text*/
+                margin: 20px 0;
+            }
+
+            .about-section {
+                width: 95%; /*Take up most of screen*/
+                padding: 15px;
+                margin: 0 auto; /*center the section*/
+                font-size: 16px;
+            }
+
+            .about-section h2 {
+                font-size: 1.8em;  /*Adjust heading size*/
+                margin-bottom: 10px;
+            }
+
+            .about-section h3 {
+                font-size: 1.3em;  /*Adjust subheading size*/
+            }
+
+            .about-section p,
+            .about-section ul li {
+                font-size: 16px;   /*Readble text size*/
+            }
+            .image-container{
+                flex-direction: column; /*Stack images*/
+                align-items: center;
+            }
+            .image-container img{
+                max-width: 80%; /*Smaller images*/
+                margin-bottom: 15px;
+            }
+             .margin-images {
+                flex-direction: column; /*Stack images*/
+                padding: 10px;
+            }
+            .margin-images img{
+                max-width: 70%;
+                margin-bottom: 10px;
+            }
+            .footer{
+                padding: 10px 0;
+            }
+
+            .footer-links{
+                text-align: center;
+            }
+
+            .footer a {
+                display: block; /*Stack the links*/
+                margin: 5px 0;
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 
@@ -406,7 +502,7 @@
         <div class="footer-links">
             <a href="Finished Pages/LoginPage.html" class="footer-login">Login Majors</a> |
             <a href="Privacy-Policy.pdf">Privacy Policy</a> |
-            <a href="#">Terms of Service</a> |
+            <a href="https://www.hlg.edu/academics/registrar/ferpa/university-policy/">Terms of Service</a> |
             <a href="HELP.html">Contact Us</a>
         </div>
         <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
