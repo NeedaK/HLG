@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,6 @@
     <script src="JavaScriptForALL.js"></script>
 
     <style>
-        .hero {
-            background: url('Pic/Back.png') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 70vh;
-            position: relative;
-            padding-left: 60%; /* Moves the content to the left */
-        }
-
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
@@ -65,16 +56,33 @@
 
         /* Logo */
         .logo {
-            width: 50px; /* Adjust the size as needed */
+            width: 50px;
+            /* Adjust the size as needed */
             height: flex;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('Pic/Back.png') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative;
+            padding-left: 60%;
+            /* Moves the content to the left */
         }
 
         .hero-content {
             position: absolute;
-            right: 10%; /* Keeps it aligned towards the right */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Fine-tune vertical centering */
-            background-color: rgba(88, 7, 7, 0.8); /* Changed color here to match the second image*/
+            right: 10%;
+            /* Keeps it aligned towards the right */
+            top: 50%;
+            /* Center vertically */
+            transform: translateY(-50%);
+            /* Fine-tune vertical centering */
+            background-color: rgba(88, 7, 7, 0.8);
+            /* Changed color here to match the second image*/
             padding: 5px;
             border-radius: 5px;
             color: white;
@@ -83,29 +91,37 @@
             text-align: center;
             height: 300px;
             display: flex;
-            justify-content: center; /* Align content to the top */
-            align-items: center; /* Center content horizontally */
+            justify-content: center;
+            /* Align content to the top */
+            align-items: center;
+            /* Center content horizontally */
         }
 
         .hero-content h1 {
             margin: 25px 25px;
-            right: 5%; /* Keeps it aligned towards the right */
+            right: 5%;
+            /* Keeps it aligned towards the right */
             font-size: 150px;
         }
 
-        .hero h2, .hero p {
+        .hero h2,
+        .hero p {
             color: white;
             margin: 60px 0;
-            font-size: 22px; /* Increased text size */
+            font-size: 22px;
+            /* Increased text size */
         }
 
+        /* Learn More Button */
         .btn-learn-more {
-            right: 30%; /* Adjust this value to move left */
+            right: 30%;
+            /* Adjust this value to move left */
             display: inline-block;
             margin-top: auto;
             padding: 12px 72px;
             background-color: rgb(1, 1, 62);
-            color: #fff; /* Black text */
+            color: #fff;
+            /* Black text */
             font-size: 20px;
             font-weight: bold;
             text-decoration: none;
@@ -114,17 +130,19 @@
         }
 
         .btn-learn-more:hover {
-            background-color: rgb(1, 1, 37); /* Darker Gold/Orange */
+            background-color: rgb(1, 1, 37);
+            /* Darker Gold/Orange */
             color: #fff;
         }
 
-
+        /* Dark Blue Strip */
         .dark-blue-strip {
-            background-color: rgb(1, 1, 62); /* Dark Blue */
-            height: 30px; /* Adjust thickness as needed */
+            background-color: rgb(1, 1, 62);
+            /* Dark Blue */
+            height: 30px;
+            /* Adjust thickness as needed */
             width: 100%;
         }
-
 
         /* Image Section */
         .image-gallery {
@@ -142,6 +160,7 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
 
+        /* Mission Section */
         .mission-section {
             display: flex;
             align-items: center;
@@ -185,15 +204,18 @@
 
         .benefit {
             width: 22%;
-            overflow: hidden; /* Ensure content doesn't overflow during animation */
+            overflow: hidden;
+            /* Ensure content doesn't overflow during animation */
         }
 
         .benefit h3 {
             font-size: 1.5em;
             color: rgb(146, 9, 9);
             font-weight: bold;
-            white-space: nowrap; /* Prevent text from wrapping */
-            position: relative; /* For absolute positioning of the animated content */
+            white-space: nowrap;
+            /* Prevent text from wrapping */
+            position: relative;
+            /* For absolute positioning of the animated content */
         }
 
         .highlight {
@@ -201,43 +223,12 @@
             font-style: italic;
         }
 
-       .benefit p {
+        .benefit p {
             font-size: 1.1em;
             color: rgb(50, 50, 50);
             line-height: 1.5;
             white-space: nowrap;
             position: relative;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .benefits-section {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .benefit {
-                width: 90%;
-                margin-bottom: 20px;
-            }
-        }
-
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .mission-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .mission-section img {
-                width: 90%;
-            }
-
-            .mission-content {
-                width: 90%;
-                padding: 20px 0;
-            }
         }
 
         /* Next Steps Section */
@@ -283,22 +274,10 @@
             line-height: 1.5;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .next-steps-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .step {
-                width: 90%;
-                margin-bottom: 20px;
-            }
-        }
-
-
+        /* Footer */
         .footer {
-            background-color: rgb(1, 1, 62); /* Matches existing footer color */
+            background-color: rgb(1, 1, 62);
+            /* Matches existing footer color */
             color: white;
             text-align: center;
             padding: 15px 0;
@@ -317,7 +296,8 @@
         }
 
         .footer a:hover {
-            color: rgba(146, 9, 9, 0.8); /* Highlight color on hover */
+            color: rgba(146, 9, 9, 0.8);
+            /* Highlight color on hover */
         }
 
         /* Style specifically for the Login link */
@@ -326,9 +306,48 @@
             font-size: 1.1em;
         }
 
+        /* Keyframes for the fly-in animation */
+        @keyframes flyIn {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes flyInAll {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Class to apply the animation */
+        .animate-highlight {
+            animation: flyIn 1s ease-in-out forwards;
+        }
+
+        .animate-highlight-all {
+            animation: flyInAll 1s ease-in-out forwards;
+        }
+
+        /* Responsive Design - Mobile First */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                /* Adjust base font size */
+            }
+
+            /* Navbar */
             .navbar {
                 flex-direction: column;
                 text-align: center;
@@ -343,6 +362,37 @@
                 margin: 5px 0;
             }
 
+            /* Hero Section */
+            .hero {
+                height: auto;
+                padding: 20px 0;
+                padding-left: 0;
+                /* Remove side padding */
+            }
+
+            .hero-content {
+                position: static;
+                transform: none;
+                top: auto;
+                right: auto;
+                max-width: 90%;
+                text-align: center;
+                height: auto;
+                padding: 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 3em;
+                /* Adjust font size */
+                margin: 20px 0;
+            }
+
+            .hero h2,
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            /* Image Section */
             .image-gallery {
                 flex-direction: column;
                 align-items: center;
@@ -351,170 +401,213 @@
             .image-gallery img {
                 width: 90%;
             }
-        }
 
-        /* Keyframes for the fly-in animation */
-        @keyframes flyIn {
-            0% {
-                transform: translateX(100%);
-                opacity: 0;
+            /* Mission Section */
+            .mission-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
             }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-         @keyframes flyInAll {
-            0% {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
 
-        /* Class to apply the animation */
-        .animate-highlight {
-            animation: flyIn 1s ease-in-out forwards;
-        }
-         .animate-highlight-all {
-            animation: flyInAll 1s ease-in-out forwards;
-        }
+            .mission-section img {
+                width: 90%;
+            }
 
+            .mission-content {
+                width: 90%;
+                padding: 20px 0;
+            }
+
+            .mission-content h2 {
+                font-size: 1.8em;
+                /* Adjust font size */
+            }
+
+            .mission-content p {
+                font-size: 1.1em;
+            }
+
+            /* Benefits Section */
+            .benefits-section {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .benefit {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .benefit h3 {
+                font-size: 1.3em;
+                /* Adjust font size */
+            }
+
+            .benefit p {
+                font-size: 1em;
+            }
+
+            /* Next Steps Section */
+            .next-steps {
+                padding: 20px;
+            }
+
+            .next-steps h2 {
+                font-size: 1.8em;
+                /* Adjust font size */
+            }
+
+            .next-steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="logo-container">
-        <img src="Pic/hlgu-logo.png" alt="HLGU Logo" class="logo">
-    </div>
-    <ul class="nav-links">
-        <li><a href="ADMISSIONS.html">Admissions</a></li>
-        <li><a href="ACADEMICS.html">Academics</a></li>
-        <li><a href="ATHLETICS.html">Athletics</a></li>
-        <li><a href="STUDENT.LIFE.html">Student Life</a></li>        <li><a href="GIVING.html">Alumni</a>
-    </ul>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1><b>Welcome!</b></h1>
-    </div>
-</section>
-
-<!-- Dark Blue Strip -->
-<div class="dark-blue-strip"></div>
-
-<!-- New Section: Mission Statement -->
-<section class="mission-section">
-    <img src="Pic/Mission.jpg" alt="Students at HLGU">
-    <div class="mission-content">
-        <h2>We want more for you.</h2>
-        <p>Find yourself surrounded by a learning community that will prepare you for more than a successful career.
-            Prepare yourself for a life well lived.</p>
-    </div>
-</section>
-
-<!-- Dark Blue Strip -->
-<div class="dark-blue-strip"></div>
-
-<!-- More Benefits Section -->
-<section class="benefits-section">
-    <div class="benefit">
-        <h3 id="opportunity-h3" class="animate-highlight"><span class="highlight">More <i>opportunity.</i></span></h3>
-        <p id="opportunity-p" class="animate-highlight">Open your path to more </p>
-        <p id="opportunity-p" class="animate-highlight">choices and a bigger vision</p>
-        <p id="opportunity-p" class="animate-highlight">of where life can lead.</p>
-    </div>
-    <div class="benefit">
-        <h3 id="connections-h3" class="animate-highlight"><span class="highlight">More <i>connections.</i></span></h3>
-        <p id="connections-p" class="animate-highlight">Make deep friendships</p>
-        <p id="connections-p" class="animate-highlight">and relationships</p>
-        <p id="connections-p" class="animate-highlight">that last a lifetime.</p>
-
-    </div>
-    <div class="benefit">
-        <h3 id="money-h3" class="animate-highlight"><span class="highlight">More <i>money.</i></span></h3>
-        <p id="money-p" class="animate-highlight">Simply put: college grads</p>
-        <p id="money-p" class="animate-highlight">have more earning potential.</p>
-        <p id="money-p" class="animate-highlight">On average, 67% more.</p>
-
-    </div>
-    <div class="benefit">
-        <h3 id="life-h3" class="animate-highlight"><span class="highlight">More <i>life.</i></span></h3>
-        <p id="life-p" class="animate-highlight">Want to live a long</p>
-        <p id="life-p" class="animate-highlight">and healthy life?</p>
-        <p id="life-p2" class="animate-highlight">Research shows:</p>
-        <p id="life-p2" class="animate-highlight">college is the secret.</p>
-    </div>
-</section>
-
-<!-- Dark Blue Strip -->
-<div class="dark-blue-strip"></div>
-
-<!-- Next Steps Section -->
-<section class="next-steps">
-    <h2>Take your next step today.</h2>
-    <div class="next-steps-container">
-        <div class="step">
-            <a href="ADMISSIONS.html">
-                <img src="Pic/ApplyNow.webp" alt="Apply Now">
-                <h3>APPLY NOW ➝</h3>
-            </a>
-            <p>100% of undergrad students receive scholarships—claim yours!</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="Pic/hlgu-logo.png" alt="HLGU Logo" class="logo">
         </div>
-        <div class="step">
-            <a href="HELP.html">
-                <img src="Pic/ScheduleAVisit.png" alt="Schedule a Visit">
-                <h3>SCHEDULE A VISIT ➝</h3>
-            </a>
-            <p>Visit in person or schedule a virtual tour to check out our campus.</p>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ADMISSIONS.html">Admissions</a></li>
+            <li><a href="ACADEMICS.html">Academics</a></li>
+            <li><a href="ATHLETICS.html">Athletics</a></li>
+            <li><a href="STUDENT.LIFE.html">Student Life</a></li>
+            <li><a href="GIVING.html">Alumni</a>
+            <li><a href="HELP.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1><b>Welcome!</b></h1>
         </div>
-        <div class="step">
-            <a href="ACADEMICS.html">
-                <img src="Pic/Explore.png" alt="Explore Majors">
-                <h3>EXPLORE MAJORS ➝</h3>
-            </a>
-            <p>Explore 36 majors and craft a modern education with a Christian foundation.</p>
+    </section>
+
+    <!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+    <!-- New Section: Mission Statement -->
+    <section class="mission-section">
+        <img src="Pic/Mission.jpg" alt="Students at HLGU">
+        <div class="mission-content">
+            <h2>We want more for you.</h2>
+            <p>Find yourself surrounded by a learning community that will prepare you for more than a successful
+                career.
+                Prepare yourself for a life well lived.</p>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-links">
-        <a href="LoginPage.html" class="footer-login">Login Majors</a> |
-        <a href="Privacy-Policy.pdf">Privacy Policy</a> |
-        <a href="#">Terms of Service</a> |
-        <a href="HELP.html">Contact Us</a>
-    </div>
-    <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
-</footer>
+    <!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-        // Get all the elements you want to animate
-        const elementsToAnimate = document.querySelectorAll('.animate-highlight');
+    <!-- More Benefits Section -->
+    <section class="benefits-section">
+        <div class="benefit">
+            <h3 id="opportunity-h3" class="animate-highlight"><span class="highlight">More <i>opportunity.</i></span>
+            </h3>
+            <p id="opportunity-p" class="animate-highlight">Open your path to more </p>
+            <p id="opportunity-p" class="animate-highlight">choices and a bigger vision</p>
+            <p id="opportunity-p" class="animate-highlight">of where life can lead.</p>
+        </div>
+        <div class="benefit">
+            <h3 id="connections-h3" class="animate-highlight"><span class="highlight">More <i>connections.</i></span>
+            </h3>
+            <p id="connections-p" class="animate-highlight">Make deep friendships</p>
+            <p id="connections-p" class="animate-highlight">and relationships</p>
+            <p id="connections-p" class="animate-highlight">that last a lifetime.</p>
 
-        // Function to add the class and start the animation with a delay
-        function animateWithDelay(index, delay) {
-            setTimeout(() => {
-                if (elementsToAnimate[index]) {
-                    elementsToAnimate[index].classList.add('animate-highlight-all');
-                }
-            }, delay);
-        }
+        </div>
+        <div class="benefit">
+            <h3 id="money-h3" class="animate-highlight"><span class="highlight">More <i>money.</i></span></h3>
+            <p id="money-p" class="animate-highlight">Simply put: college grads</p>
+            <p id="money-p" class="animate-highlight">have more earning potential.</p>
+            <p id="money-p" class="animate-highlight">On average, 67% more.</p>
 
-        // Loop through the elements and set a delay for each one
-        for (let i = 0; i < elementsToAnimate.length; i++) {
-            animateWithDelay(i, i * 2000);  // Adjust the delay as needed
-        }
-  });
-</script>
+        </div>
+        <div class="benefit">
+            <h3 id="life-h3" class="animate-highlight"><span class="highlight">More <i>life.</i></span></h3>
+            <p id="life-p" class="animate-highlight">Want to live a long</p>
+            <p id="life-p" class="animate-highlight">and healthy life?</p>
+            <p id="life-p2" class="animate-highlight">Research shows:</p>
+            <p id="life-p2" class="animate-highlight">college is the secret.</p>
+        </div>
+    </section>
+
+    <!-- Dark Blue Strip -->
+    <div class="dark-blue-strip"></div>
+
+    <!-- Next Steps Section -->
+    <section class="next-steps">
+        <h2>Take your next step today.</h2>
+        <div class="next-steps-container">
+            <div class="step">
+                <a href="ADMISSIONS.html">
+                    <img src="Pic/ApplyNow.webp" alt="Apply Now">
+                    <h3>APPLY NOW ➝</h3>
+                </a>
+                <p>100% of undergrad students receive scholarships—claim yours!</p>
+            </div>
+            <div class="step">
+                <a href="HELP.html">
+                    <img src="Pic/ScheduleAVisit.png" alt="Schedule a Visit">
+                    <h3>SCHEDULE A VISIT ➝</h3>
+                </a>
+                <p>Visit in person or schedule a virtual tour to check out our campus.</p>
+            </div>
+            <div class="step">
+                <a href="ACADEMICS.html">
+                    <img src="Pic/Explore.png" alt="Explore Majors">
+                    <h3>EXPLORE MAJORS ➝</h3>
+                </a>
+                <p>Explore 36 majors and craft a modern education with a Christian foundation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="LoginPage.html" class="footer-login">Login Majors</a> |
+            <a href="Privacy-Policy.pdf">Privacy Policy</a> |
+            <a href="https://www.hlg.edu/academics/registrar/ferpa/university-policy/">Terms of Service</a> |
+            <a href="HELP.html">Contact Us</a>
+        </div>
+        <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all the elements you want to animate
+            const elementsToAnimate = document.querySelectorAll('.animate-highlight');
+
+            // Function to add the class and start the animation with a delay
+            function animateWithDelay(index, delay) {
+                setTimeout(() => {
+                    if (elementsToAnimate[index]) {
+                        elementsToAnimate[index].classList.add('animate-highlight-all');
+                    }
+                }, delay);
+            }
+
+            // Loop through the elements and set a delay for each one
+            for (let i = 0; i < elementsToAnimate.length; i++) {
+                animateWithDelay(i, i * 2000); // Adjust the delay as needed
+            }
+        });
+    </script>
 </body>
+
 </html>
