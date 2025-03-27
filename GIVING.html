@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HLGU - Alumni & Giving</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             position: relative;
             min-height: 100vh;
+            color: #333;
         }
 
         .content-wrapper {
@@ -19,6 +21,7 @@
             min-height: calc(100vh - 60px);
         }
 
+        /* Navigation Bar */
         .navbar {
             background-color: rgb(1, 1, 62);
             padding: 15px 20px;
@@ -60,6 +63,7 @@
             height: auto;
         }
 
+        /* Hero Section */
         .hero {
             display: flex;
             justify-content: center;
@@ -98,6 +102,7 @@
             text-align: center;
         }
 
+        /* Footer */
         .footer {
             background-color: rgb(1, 1, 62); /* Matches existing footer color */
             color: white;
@@ -127,40 +132,7 @@
             font-size: 1.1em;
         }
 
-        /* Tablet and smaller devices */
-        @media screen and (max-width: 992px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                padding-top: 10px;
-            }
-
-            .nav-links li {
-                margin: 5px 0;
-            }
-        }
-
-        /* Mobile devices */
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                padding-top: 10px;
-            }
-
-            .nav-links li {
-                margin: 5px 0;
-            }
-        }
-
+        /* Alumni Content Styles */
         .alumni-intro {
             max-width: 800px;
             margin: 20px auto;
@@ -210,7 +182,7 @@
             text-align: center;
         }
 
-        /* Style for the Tab Links */
+        /* Tab Styles */
         .tablink {
             background-color: rgb(1, 1, 62);
             color: white;
@@ -243,7 +215,6 @@
             background-color: rgba(88, 7, 7, 0.8);
         }
 
-        /* Style for the Tab Content */
         .tabcontent {
             color: black;
             display: none;
@@ -267,7 +238,6 @@
             text-align: center;
         }
 
-        /* Style for the Alumni section Header Paragraph */
         .alumni-sections > p {
             max-width: 800px;
             margin: 20px auto;
@@ -306,7 +276,7 @@
             font-style: normal;
         }
 
-        /*Style for Event Listings */
+        /* Event Listing Styles */
         .event-list {
             list-style: none;
             padding: 0;
@@ -341,7 +311,7 @@
             text-decoration: underline;
         }
 
-        /* Styles for Subscribe Form */
+        /* Subscribe Form Styles */
         .subscribe-form {
             margin-top: 20px;
             text-align: center;
@@ -369,20 +339,16 @@
             background-color: rgba(88, 7, 7, 0.8);
         }
 
-        /* Styles for Subscribe Box */
         .subscribe-box {
             background-color: rgba(255, 0, 0, 0.2);
-            /* Red with 20% opacity */
             padding: 15px;
             border-radius: 8px;
             display: inline-block;
-            /* Ensures the box only takes up the content width */
         }
 
-        /* Styles for Alumni Spotlight Section */
+        /* Alumni Spotlight Styles */
         .alumni-spotlight {
             text-align: left;
-            /* Align content to the left */
         }
 
 
@@ -408,27 +374,21 @@
             margin: 10px auto;
         }
 
-        /* Style for the event and the box behind it */
+        /* Event Container Styles */
         .events-container {
             display: flex;
             align-items: flex-start;
-            /* Align items at the top */
             justify-content: space-between;
-            /* Put space between events and image */
         }
 
         .events-text {
             flex: 1;
-            /* Take up remaining space */
             padding-right: 20px;
-            /* Add spacing to the right of the events */
         }
 
         .events-image {
             flex-shrink: 0;
-            /* Prevent image from shrinking */
             max-width: 40%;
-            /* Set a maximum width for the image */
             height: auto;
         }
 
@@ -436,68 +396,59 @@
             max-width: 100%;
             height: auto;
             display: block;
-            /* Remove default inline spacing */
         }
 
-        /* Give Back Tab Layout */
+        /* Give Back Tab Styles */
         .give-back-container {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            /* Align top to avoid image stretching */
         }
 
         .give-back-text {
             flex: 1;
             padding-right: 20px;
-            /* Add space between text and image */
         }
 
         .give-back-image {
             flex-shrink: 0;
             max-width: 40%;
             height: auto;
-             order:-1; /* Pushes the image to the left */
+            order: -1;
         }
 
         .give-back-container .areas-to-support {
-          float: none;
+            float: none;
         }
 
         .areas-to-support-container {
-          display: flex;
+            display: flex;
             justify-content: space-between;
             align-items: flex-start;
-
         }
 
         .areas-to-support-image {
             flex-shrink: 0;
             max-width: 40%;
             height: auto;
-
-
-
         }
 
-            .areas-to-support-container .areas-to-support-text{
-               flex: 1;
-               width: 60%;
+        .areas-to-support-container .areas-to-support-text {
+            flex: 1;
+            width: 60%;
+        }
 
-            }
-
-                 /* Add space between images and text in Give Back Tab */
         .give-back-container > div,
         .areas-to-support-container > div {
-            margin-bottom: 20px; /* Add space below each main section */
+            margin-bottom: 20px;
         }
 
-        /* Add space between Ways to Give Image and Areas to Support */
         .areas-to-support-container {
-            margin-top: 20px; /* Adjust as needed */
+            margin-top: 20px;
         }
-             /* Styles for all h3 tags within tab content*/
-        .tabcontent h3, .alumni-image h3 {
+
+        .tabcontent h3,
+        .alumni-image h3 {
             font-size: 20px;
             font-weight: bold;
             font-style: italic;
@@ -505,12 +456,169 @@
             text-align: center;
         }
 
-        /* Styles for all h4 tags within tab content*/
         .tabcontent h4 {
             font-size: 16px;
             font-weight: bold;
             font-style: italic;
             color: rgba(88, 7, 7, 0.8);
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            /* Navbar */
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .logo {
+                width: 40px;
+            }
+
+            /* Hero Section */
+            .hero {
+                height: auto;
+                padding: 20px 0;
+            }
+
+            .hero-content {
+                position: static;
+                margin: 0 auto;
+                max-width: 90%;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+                margin: 30px 0;
+            }
+
+            .hero h2,
+            .hero p {
+                font-size: 18px;
+                margin: 20px 0;
+            }
+
+            /* Alumni Content */
+            .alumni-intro {
+                font-size: 1em;
+                padding: 10px;
+            }
+
+            .alumni-sections {
+                padding: 10px;
+            }
+
+            .alumni-sections h2 {
+                font-size: 1.8em;
+            }
+
+            .alumni-sections > p {
+                font-size: 1em;
+                padding: 10px;
+            }
+
+            /* Tabs */
+            .tablink {
+                font-size: 16px;
+                padding: 15px;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .tablink p {
+                font-size: 14px;
+                text-align: left;
+                flex: none;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .tabcontent {
+                padding: 10px;
+                font-size: 1em;
+            }
+
+            /* Images */
+            .alumni-image {
+                height: auto;
+            }
+
+            /* Give Back Container */
+            .give-back-container,
+            .areas-to-support-container {
+                flex-direction: column;
+            }
+
+            .give-back-image,
+            .areas-to-support-image {
+                max-width: 100%;
+            }
+
+            .give-back-text,
+            .areas-to-support-text {
+                padding-right: 0;
+            }
+
+            /* Event Container */
+            .events-container {
+                flex-direction: column;
+            }
+
+            .events-image {
+                max-width: 100%;
+            }
+
+            .events-text {
+                padding-right: 0;
+            }
+
+            /* Subscribe Form */
+            .subscribe-form input[type="email"] {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .subscribe-form button {
+                width: 100%;
+            }
+
+            /* Adjust header sizes in tab content for mobile */
+            .tabcontent h3 {
+                font-size: 1.5em; /* Smaller for mobile */
+            }
+
+            .tabcontent h4 {
+                font-size: 1.2em; /* Even smaller for detail */
+            }
+            .tablink {
+                 align-items: stretch; /* Allow full height click area */
+            }
         }
     </style>
 </head>
@@ -523,10 +631,12 @@
                 <img src="Pic/hlgu-logo.png" alt="HLGU Logo" class="logo">
             </div>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="ADMISSIONS.html">Admissions</a></li>
                 <li><a href="ACADEMICS.html">Academics</a></li>
                 <li><a href="ATHLETICS.html">Athletics</a></li>
                 <li><a href="STUDENT.LIFE.html">Student Life</a></li>
+                <li><a href="GIVING.html">Alumni</a>
                 <li><a href="HELP.html">Contact</a></li>
             </ul>
         </nav>
@@ -585,46 +695,46 @@
                     <p>Invest in the future of HLGU and its students! Your generosity can help provide scholarships, enhance academic programs, and improve campus facilities.</p>
                     <p>Every gift, big or small, makes a difference in the lives of our students.</p>
 
-                    <div class = "give-back-container">
-                      <div class = "give-back-image">
+                    <div class="give-back-container">
+                        <div class="give-back-image">
                             <img src="Pic/GiveBacktoHLGU.jpg" alt="HLGU Logos" class="alumni-image">
                         </div>
-                        <div class = "give-back-text">
-                               <h3>Ways to Give:</h3>
-                                <ul>
-                                    <li><b>Online:</b> Make a secure gift online through our <a href="https://www.hlg.edu/alumni/give-to-hlgu/">Online Giving Form</a>.</li>
-                                    <li><b>By Mail:</b> Send a check payable to Hannibal-LaGrange University to:
-                                        <div class="address">
-                                            Hannibal-LaGrange University<br>
-                                            2800 Palmyra Road<br>
-                                            Hannibal, MO 63401
-                                        </div>
-                                    </li>
-                                    <li><b>By Phone:</b> Call our Advancement Office at (573) 629-3126 to make a gift over the phone.</li>
-                                    <li><b>Planned Giving:</b> Consider including HLGU in your estate plans. <a href="#">Learn more about planned giving options.</a></li>
-                                    <li><b>Gifts of Stock:</b> Donate appreciated stock to HLGU for potential tax benefits. Contact the Advancement Office for transfer instructions.</li>
-                                </ul>
-                         </div>
+                        <div class="give-back-text">
+                            <h3>Ways to Give:</h3>
+                            <ul>
+                                <li><b>Online:</b> Make a secure gift online through our <a href="https://www.hlg.edu/alumni/give-to-hlgu/">Online Giving Form</a>.</li>
+                                <li><b>By Mail:</b> Send a check payable to Hannibal-LaGrange University to:
+                                    <div class="address">
+                                        Hannibal-LaGrange University<br>
+                                        2800 Palmyra Road<br>
+                                        Hannibal, MO 63401
+                                    </div>
+                                </li>
+                                <li><b>By Phone:</b> Call our Advancement Office at (573) 629-3126 to make a gift over the phone.</li>
+                                <li><b>Planned Giving:</b> Consider including HLGU in your estate plans. <a href="#">Learn more about planned giving options.</a></li>
+                                <li><b>Gifts of Stock:</b> Donate appreciated stock to HLGU for potential tax benefits. Contact the Advancement Office for transfer instructions.</li>
+                            </ul>
+                        </div>
 
 
-                   </div>
-                   <div class = "areas-to-support-container">
-                        <div class = "areas-to-support-text">
-                                   <h3>Areas to Support:</h3>
-                                    <ul>
-                                        <li><b>The HLGU Fund:</b> Provides unrestricted support for the University's greatest needs.</li>
-                                        <li><b>Scholarships:</b> Help make an HLGU education accessible to deserving students.</li>
-                                        <li><b>Academic Programs:</b> Support specific departments and programs, such as Nursing, Education, or Music.</li>
-                                        <li><b>Athletics:</b> Contribute to the success of our Trojan athletic teams.</li>
-                                        <li><b>Capital Projects:</b> Help us improve campus facilities and infrastructure.</li>
-                                    </ul>
-                     </div>
-                    <div class = "areas-to-support-image">
-                               <img src="Pic/GiveBack2HLGU.jpg" alt="Area to support painting" class="alumni-image">
                     </div>
+                    <div class="areas-to-support-container">
+                        <div class="areas-to-support-text">
+                            <h3>Areas to Support:</h3>
+                            <ul>
+                                <li><b>The HLGU Fund:</b> Provides unrestricted support for the University's greatest needs.</li>
+                                <li><b>Scholarships:</b> Help make an HLGU education accessible to deserving students.</li>
+                                <li><b>Academic Programs:</b> Support specific departments and programs, such as Nursing, Education, or Music.</li>
+                                <li><b>Athletics:</b> Contribute to the success of our Trojan athletic teams.</li>
+                                <li><b>Capital Projects:</b> Help us improve campus facilities and infrastructure.</li>
+                            </ul>
+                        </div>
+                        <div class="areas-to-support-image">
+                            <img src="Pic/GiveBack2HLGU.jpg" alt="Area to support painting" class="alumni-image">
+                        </div>
 
-                  </div>
-                    <p style = "text-align: center">Your gift, no matter the size, is an investment in the lives of our students and the future of Hannibal-LaGrange University. <a href="https://www.hlg.edu/alumni/give-to-hlgu/">Donate Now!</a></p>
+                    </div>
+                    <p style="text-align: center">Your gift, no matter the size, is an investment in the lives of our students and the future of Hannibal-LaGrange University. <a href="https://www.hlg.edu/alumni/give-to-hlgu/">Donate Now!</a></p>
                 </div>
             </div>
 
@@ -666,15 +776,15 @@
                             <img src="Pic/AlumniNewsAndEvents.png" alt="Alumni News and Events">
                         </div>
                     </div>
-                     <div class="subscribe-form">
-                        <div class = "subscribe-box">
+                    <div class="subscribe-form">
+                        <div class="subscribe-box">
                             <p><b>Subscribe to Alumni News & Events</b></p>
                             <p>Enter your email address to receive updates on upcoming events and alumni news:</p>
                             <input type="email" placeholder="Your Email Address">
                             <button>Subscribe</button>
                         </div>
                     </div>
-                    <p style = "text-align:center">Don't forget to update your contact information to receive event invitations and alumni news! <a href="#">Update Your Information</a></p>
+                    <p style="text-align:center">Don't forget to update your contact information to receive event invitations and alumni news! <a href="#">Update Your Information</a></p>
                 </div>
             </div>
 
@@ -686,7 +796,7 @@
                 </button>
                 <div id="Success" class="tabcontent alumni-spotlight">
                     <h3><b>Shine a Light on Your Success!</b></h3>
-                <img src="Pic/AlumniSuccessStories.jpg" alt="Alumni Success Stories" class="alumni-image">
+                    <img src="Pic/AlumniSuccessStories.jpg" alt="Alumni Success Stories" class="alumni-image">
                     <p>HLGU is proud of our alumni and their accomplishments! This is your opportunity to share your journey, inspire fellow Trojans, and connect with the HLGU community.</p>
 
                     <h4><b>Share Your Story:</b></h4>
@@ -701,9 +811,10 @@
                     </ul>
 
                     <h4><b>Read Inspiring Stories:</b></h4>
-                     <p style = "text-align:center">Check back regularly to read about the incredible achievements and inspiring stories of your fellow HLGU alumni!</p>
+                    <p style="text-align:center">Check back regularly to read about the incredible achievements and inspiring stories of your fellow HLGU alumni!</p>
 
-                    <p style = "text-align:center">If you are looking to find other Alumni go to this location <a href="#">Alumni Spot light</a> </p>
+                    <p style="text-align:center">If you are looking to find other Alumni go to this location <a href="#">Alumni Spot light</a> </p>
+                </div>
             </div>
         </section>
     </div>
