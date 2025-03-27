@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admissions</title>
-
-</head>
-<body>
     <style>
-        .hero {
-            background: url('Pic/AdmissioncBackground.jpg') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 70vh;
-            position: relative;
-            padding-right: 60%; /* Moves the content to the left */
-            
-        }
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            position: relative; /* Required for absolute positioning of the footer */
-            min-height: 100vh; /* Ensure the body takes the full height */
+            position: relative;
+            /* Required for absolute positioning of the footer */
+            min-height: 100vh;
+            /* Ensure the body takes the full height */
+            color: #333; /* Default text color */
         }
 
         .content-wrapper {
-            padding-bottom: 60px; /* Height of the footer to prevent content overlap */
-            min-height: calc(100vh - 60px);  /* Adjust based on header and footer heights */
+            padding-bottom: 60px;
+            /* Height of the footer to prevent content overlap */
+            min-height: calc(100vh - 60px);
+            /* Adjust based on header and footer heights */
         }
 
+        /* Navigation Bar */
         .navbar {
             background-color: rgb(1, 1, 62);
             padding: 15px 20px;
@@ -73,9 +68,22 @@
             height: auto;
         }
 
+        /* Hero Section */
+        .hero {
+            background: url('Pic/AdmissioncBackground.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative;
+            padding-right: 60%;
+            /* Moves the content to the left */
+        }
+
         .hero-content {
             position: absolute;
-            left: 5%; /* Adjust if necessary */
+            left: 5%;
+            /* Adjust if necessary */
             background-color: rgba(88, 7, 7, 0.8);
             padding: 20px;
             border-radius: 10px;
@@ -101,6 +109,7 @@
             font-size: 25px;
         }
 
+        /* Main Container */
         .container {
             display: flex;
             justify-content: space-between;
@@ -111,7 +120,7 @@
             gap: 50px;
         }
 
-        /* Left Column: Why Choose HLGU */
+        /* Question Section */
         .question-section {
             flex: 1;
             padding: 20px;
@@ -129,8 +138,10 @@
             font-size: 20px;
             text-align: center;
             color: #333;
+            line-height: 1.6;
         }
 
+        /* Learn More Button */
         .btn-learn-more {
             display: inline-block;
             margin-top: 20px;
@@ -149,6 +160,7 @@
             color: #fff;
         }
 
+        /* Info Container */
         .info-container {
             display: flex;
             align-items: flex-start;
@@ -158,7 +170,7 @@
             gap: 50px;
         }
 
-        /* Right Column: Request for Information */
+        /* Request for Information Section */
         .rfi-section {
             flex: 1;
             padding: 20px;
@@ -218,15 +230,18 @@
             background-color: #A52A2A;
         }
 
+        /* Dark Blue Strip */
         .dark-blue-strip {
             background-color: rgb(1, 1, 62);
             height: 30px;
             width: 100%;
         }
 
+        /* Visit Container */
         .visit-container {
             display: flex;
-            flex-direction: column; /* Stacks both sections vertically */
+            flex-direction: column;
+            /* Stacks both sections vertically */
             align-items: center;
             gap: 30px;
             max-width: 60%;
@@ -253,7 +268,8 @@
             text-align: center;
         }
 
-        .trojan-day-content h2, .campus-visit h2 {
+        .trojan-day-content h2,
+        .campus-visit h2 {
             font-size: 28px;
             font-weight: bold;
             font-style: italic;
@@ -266,11 +282,14 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px; /* Space between image and text */
+            margin-bottom: 20px;
+            /* Space between image and text */
         }
 
+        /* Footer */
         .footer {
-            background-color: rgb(1, 1, 62); /* Matches existing footer color */
+            background-color: rgb(1, 1, 62);
+            /* Matches existing footer color */
             color: white;
             text-align: center;
             padding: 15px 0;
@@ -289,7 +308,8 @@
         }
 
         .footer a:hover {
-            color: rgba(146, 9, 9, 0.8); /* Highlight color on hover */
+            color: rgba(146, 9, 9, 0.8);
+            /* Highlight color on hover */
         }
 
         /* Style specifically for the Login link */
@@ -297,24 +317,14 @@
             font-weight: bold;
             font-size: 1.1em;
         }
-        
 
-        /* Tablet and smaller devices */
-        @media screen and (max-width: 992px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .question-section,
-            .rfi-section {
-                max-width: 100%;
-                text-align: center;
-            }
-        }
-
-        /* Mobile devices */
+        /* Media Queries for Responsiveness */
         @media screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            /* Navbar */
             .navbar {
                 flex-direction: column;
                 text-align: center;
@@ -329,13 +339,79 @@
                 margin: 5px 0;
             }
 
-            .image-gallery {
-                flex-direction: column;
-                align-items: center;
+            /* Hero Section */
+            .hero {
+                height: auto;
+                padding: 20px 0;
+                padding-right: 0;
             }
 
-            .image-gallery img {
-                width: 90%;
+            .hero-content {
+                position: static;
+                margin: 0 auto;
+                max-width: 90%;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+                margin: 20px 0;
+            }
+
+            .hero h2,
+            .hero p {
+                font-size: 1em;
+            }
+
+            /* Container */
+            .container {
+                flex-direction: column;
+                align-items: center;
+                margin: 20px;
+                padding: 10px;
+            }
+
+            /* Question Section */
+            .question-section {
+                text-align: center;
+            }
+
+            .question {
+                font-size: 1.5em;
+            }
+
+            .question-text {
+                font-size: 1.1em;
+            }
+
+            /* RFI Section */
+            .rfi-section {
+                max-width: 100%;
+            }
+
+            .rfi-section h1 {
+                font-size: 1.5em;
+            }
+
+            .rfi-form label {
+                font-size: 1em;
+            }
+
+            .rfi-form input,
+            .rfi-form select {
+                font-size: 1em;
+                padding: 8px;
+            }
+
+            /* Visit Container */
+            .visit-container {
+                max-width: 90%;
+                gap: 20px;
+            }
+
+            .trojan-day-content h2,
+            .campus-visit h2 {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -346,10 +422,11 @@
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
+            <li><a href="ADMISSIONS.html">Admissions</a></li>
             <li><a href="ACADEMICS.html">Academics</a></li>
             <li><a href="ATHLETICS.html">Athletics</a></li>
             <li><a href="STUDENT.LIFE.html">Student Life</a></li>
-            <li><a href="GIVING.html">Alumni</a></li>
+            <li><a href="GIVING.html">Alumni</a>
             <li><a href="HELP.html">Contact</a></li>
         </ul>
     </nav>
@@ -360,7 +437,8 @@
         <section class="hero">
             <div class="hero-content">
                 <h1><b>Admission Gateway</b></h1>
-                <p>Explore the admissions process, program requirements, tuition, and how to apply at Hannibal-LaGrange University.</p>
+                <p>Explore the admissions process, program requirements, tuition, and how to apply at
+                    Hannibal-LaGrange University.</p>
             </div>
         </section>
 
@@ -369,8 +447,11 @@
 
         <div class="question-section">
             <p class="question"><em>Why choose HLGU?</em></p>
-            <p class="question-text">No matter where you are on your academic journey—whether you're a recent high school graduate, pursuing a graduate degree, returning to complete your education, transferring credits, or still in high school—HLGU welcomes you.</p>
-            <p class="question-text">At HLGU, students grow both personally and professionally in a uniquely Christian environment, equipping them for success in life and career.</p>
+            <p class="question-text">No matter where you are on your academic journey—whether you're a recent high
+                school graduate, pursuing a graduate degree, returning to complete your education, transferring
+                credits, or still in high school—HLGU welcomes you.</p>
+            <p class="question-text">At HLGU, students grow both personally and professionally in a uniquely Christian
+                environment, equipping them for success in life and career.</p>
         </div>
 
         <!-- Dark Blue Strip -->
@@ -422,14 +503,18 @@
                         <h2><em>Come Visit Us on Trojan Days</em></h2>
                         <p>Trojan Day is your opportunity to experience what HLGU has to offer firsthand.
                             Designed with you and your family in mind, this event allows you to explore campus,
-                            connect with current students, engage with faculty, attend a class, and enjoy lunch in the cafeteria.
-                            Packed with valuable experiences, the day is crafted to help you envision yourself as a Trojan at Hannibal-LaGrange University!</p>
+                            connect with current students, engage with faculty, attend a class, and enjoy lunch in the
+                            cafeteria.
+                            Packed with valuable experiences, the day is crafted to help you envision yourself as a
+                            Trojan at Hannibal-LaGrange University!</p>
                     </div>
                 </section>
 
                 <section class="campus-visit">
                     <h2><em>Personal Campus Visit</em></h2>
-                    <p>We can't wait to meet you and show you around campus! Come connect with the people who make HLGU special and explore the opportunities that await you here. Spend a day with us, and you'll experience the distinctively Christian, high-quality education that makes HLGU stand out.</p>
+                    <p>We can't wait to meet you and show you around campus! Come connect with the people who make HLGU
+                        special and explore the opportunities that await you here. Spend a day with us, and you'll
+                        experience the distinctively Christian, high-quality education that makes HLGU stand out.</p>
                 </section>
             </div>
     </div>
@@ -437,13 +522,14 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-links">
-            <a href="Finished Pages/LoginPage.html" class="footer-login">Login Majors</a> |
+            <a href="LoginPage.html" class="footer-login">Login Majors</a> |
             <a href="Privacy-Policy.pdf">Privacy Policy</a> |
-            <a href="#">Terms of Service</a> |
+            <a href="https://www.hlg.edu/academics/registrar/ferpa/university-policy/">Terms of Service</a> |
             <a href="HELP.html">Contact Us</a>
         </div>
         <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
     </footer>
 
 </body>
+
 </html>
