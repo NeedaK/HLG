@@ -15,7 +15,8 @@
             /* Required for absolute positioning of the footer */
             min-height: 100vh;
             /* Ensure the body takes the full height */
-            color: #333; /* Default text color */
+            color: #333;
+            /* Default text color */
         }
 
         .content-wrapper {
@@ -413,6 +414,21 @@
             .campus-visit h2 {
                 font-size: 1.5em;
             }
+
+            .trojan-day,
+            .campus-visit {
+                width: 100%; /* Full width on mobile */
+                margin-bottom: 20px;  /* Add spacing between sections */
+                box-sizing: border-box; /* Include padding and border in element's total width and height */
+            }
+             .trojan-day-image{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+             }
+             .trojan-day-image img{
+                object-fit: contain;
+             }
         }
     </style>
     <!-- Navigation Bar -->
