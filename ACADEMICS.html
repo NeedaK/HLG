@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academics</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             position: relative;
             min-height: 100vh;
+            color: #333; /* Set default text color */
         }
 
         .content-wrapper {
@@ -18,6 +21,7 @@
             min-height: calc(100vh - 60px);
         }
 
+        /* Navigation Bar */
         .navbar {
             background-color: rgb(1, 1, 62);
             padding: 15px 20px;
@@ -59,6 +63,7 @@
             height: auto;
         }
 
+        /* Hero Section */
         .hero {
             display: flex;
             justify-content: center;
@@ -97,6 +102,7 @@
             font-size: 25px;
         }
 
+        /* Main Content Container */
         .main-content-container {
             display: flex;
             justify-content: space-between;
@@ -105,23 +111,27 @@
             margin: 20px;
         }
 
+        /* Departments Column */
         .departments-column {
             flex: 1;
             margin-right: 20px;
         }
 
         .departments-column h2 {
-            font-size: 28px;
+            font-size: 2em;
             font-weight: bold;
             font-style: italic;
             color: rgba(88, 7, 7, 0.8);
             text-align: center;
+            margin-bottom: 0.5em; /* Space below heading */
         }
 
+        /* Achievements Column */
         .achievements-column {
             flex: 1;
         }
 
+        /* Collapsible Styles */
         .collapsible {
             background-color: rgb(1, 1, 62);
             color: white;
@@ -133,6 +143,7 @@
             outline: none;
             font-size: 15px;
             margin-bottom: 5px;
+            transition: background-color 0.3s ease; /* Smooth transition */
         }
 
         .active,
@@ -150,11 +161,12 @@
         }
 
         .content p {
-            font-size: 18px;
+            font-size: 1em;
             color: #333;
+            line-height: 1.6; /* Improve readability */
         }
 
-       .content img {
+        .content img {
             max-width: 100px;
             height: auto;
             margin-right: 15px;
@@ -162,6 +174,7 @@
             float: left;
         }
 
+        /* Achievements Section Styles */
         .achievements-section {
             padding: 20px;
             border: 1px solid #ddd;
@@ -170,7 +183,7 @@
         }
 
         .achievements-section h2 {
-            font-size: 28px;
+            font-size: 2em;
             font-weight: bold;
             font-style: italic;
             color: rgba(88, 7, 7, 0.8);
@@ -178,14 +191,15 @@
         }
 
         .achievements-section h3 {
-            font-size: 22px;
+            font-size: 1.3em;
             font-style: italic;
             color: rgba(88, 7, 7, 0.8);
         }
 
         .achievements-section p {
-            font-size: 18px;
+            font-size: 1em;
             color: #333;
+            line-height: 1.6;
         }
 
         .achievement-item {
@@ -195,10 +209,11 @@
         .link {
             display: block;
             text-align: right;
-            font-size: 14px;
+            font-size: 0.9em;
             color: rgb(1, 1, 62);
         }
 
+        /* Footer Styles */
         .footer {
             background-color: rgb(1, 1, 62);
             color: white;
@@ -209,13 +224,6 @@
             bottom: 0;
             left: 0;
             z-index: 100;
-        }
-
-        .footer {
-            background-color: rgb(1, 1, 62); /* Matches existing footer color */
-            color: white;
-            text-align: center;
-            padding: 15px 0;
         }
 
         .footer-links {
@@ -231,38 +239,15 @@
         }
 
         .footer a:hover {
-            color: rgba(146, 9, 9, 0.8); /* Highlight color on hover */
+            color: rgba(146, 9, 9, 0.8);
         }
 
-        /* Style specifically for the Login link */
         .footer-login {
             font-weight: bold;
             font-size: 1.1em;
         }
 
-        @media screen and (max-width: 992px) {
-            .main-content-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                padding-top: 10px;
-            }
-
-            .nav-links li {
-                margin: 5px 0;
-            }
-        }
-
+        /* Additional Styles */
         .achievements-image {
             width: 100%;
             max-width: 600px;
@@ -279,7 +264,7 @@
         }
 
         .question {
-            font-size: 28px;
+            font-size: 1.8em;
             font-weight: bold;
             font-style: italic;
             color: rgba(88, 7, 7, 0.8);
@@ -287,7 +272,7 @@
         }
 
         .question-text {
-            font-size: 20px;
+            font-size: 1.2em;
             text-align: center;
             color: #333;
         }
@@ -297,16 +282,157 @@
             height: 30px;
             width: 100%;
         }
-          /* Styles for the image inside content div*/
-        .content img {
-            max-width: 100px;
-            height: auto;
-            margin-right: 15px;
-            margin-bottom: 10px;
-            float: left;
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            /* General adjustments for small screens */
+            body {
+                font-size: 16px;
+                /* Adjust base font size for readability */
+            }
+
+            /* Navbar */
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 10px;
+                width: 100%;
+                /* Take full width */
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+                width: 100%;
+                /* Take full width */
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .logo {
+                width: 40px;
+            }
+
+            /* Hero Section */
+            .hero {
+                height: auto;
+                padding: 20px 0;
+                padding-left: 0;
+                /*Remove side padding*/
+            }
+
+            .hero-content {
+                position: static;
+                margin: 0 auto;
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+                margin: 20px 0;
+            }
+
+            .hero h2,
+            .hero p {
+                font-size: 1em;
+            }
+
+            /* Main Content Container */
+            .main-content-container {
+                flex-direction: column;
+                padding: 10px;
+                margin: 10px;
+                /* Adjust padding and margin */
+            }
+
+            .departments-column {
+                margin-right: 0;
+                /* Remove right margin */
+            }
+
+            /* Collapsible Styles */
+            .collapsible {
+                font-size: 1em;
+                padding: 15px;
+            }
+
+            .content {
+                padding: 0 10px;
+            }
+
+            .content p {
+                font-size: 1em;
+            }
+
+            .content img {
+                max-width: 80px;
+                /* Adjust image size */
+                margin-right: 10px;
+            }
+
+            /* Achievements Section Styles */
+            .achievements-section {
+                width: 100%;
+                padding: 10px;
+                /* Adjust padding */
+            }
+
+            .achievements-section h2 {
+                font-size: 1.5em;
+            }
+
+            .achievements-section h3 {
+                font-size: 1.2em;
+            }
+
+            .achievements-section p {
+                font-size: 1em;
+            }
+
+            .link {
+                font-size: 0.8em;
+            }
+
+            /* Achievements Image */
+            .achievements-image {
+                max-width: 100%;
+                margin: 10px auto;
+                /* Adjust margin */
+            }
+
+            /* Question Section */
+            .question-section {
+                padding: 10px;
+                margin: 10px;
+                /* Adjust padding and margin */
+            }
+
+            .question {
+                font-size: 1.5em;
+            }
+
+            .question-text {
+                font-size: 1.1em;
+            }
+             /* Add more styling as needed for smaller screens */
+            .content::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation Bar -->
@@ -317,9 +443,10 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="ADMISSIONS.html">Admissions</a></li>
+            <li><a href="ACADEMICS.html">Academics</a></li>
             <li><a href="ATHLETICS.html">Athletics</a></li>
             <li><a href="STUDENT.LIFE.html">Student Life</a></li>
-            <li><a href="GIVING.html">Alumni</a></li>
+            <li><a href="GIVING.html">Alumni</a>
             <li><a href="HELP.html">Contact</a></li>
         </ul>
     </nav>
@@ -330,18 +457,21 @@
         <section class="hero">
             <div class="hero-content">
                 <h1><b>Academics</b></h1>
-                <p>Discover degree programs, faculty contacts, academic resources, and key dates at Hannibal-LaGrange University.</p>
+                <p>Discover degree programs, faculty contacts, academic resources, and key dates at Hannibal-LaGrange
+                    University.</p>
             </div>
         </section>
 
-         <!-- Dark Blue Strip -->
-         <div class="dark-blue-strip"></div>
+        <!-- Dark Blue Strip -->
+        <div class="dark-blue-strip"></div>
 
-         <div class="question-section">
+        <div class="question-section">
             <p class="question"><em>Why choose HLGU Academics?</em></p>
-            <p class="question-text">Hannibal-LaGrange University provides a transformative academic experience, blending faith-based learning with rigorous academic inquiry.  Our dedicated faculty are committed to nurturing your intellectual growth and preparing you for success in your chosen field.</p>
+            <p class="question-text">Hannibal-LaGrange University provides a transformative academic experience,
+                blending faith-based learning with rigorous academic inquiry. Our dedicated faculty are committed to
+                nurturing your intellectual growth and preparing you for success in your chosen field.</p>
         </div>
-    
+
         <!-- Dark Blue Strip -->
         <div class="dark-blue-strip"></div>
 
@@ -352,99 +482,126 @@
                 <h2>Explore Our Academic Departments</h2>
                 <button type="button" class="collapsible">Art</button>
                 <div class="content">
-                  <img src="Pic/ART.jpg" alt="Art Department">
-                  <p>Explore courses in art history, art appreciation, art education, crafts, and design. In-studio areas include ceramics, computer graphics, drawing, painting, photography, printmaking, and sculpture.</p>
-              </div>
+                    <img src="Pic/ART.jpg" alt="Art Department">
+                    <p>Explore courses in art history, art appreciation, art education, crafts, and design. In-studio
+                        areas include ceramics, computer graphics, drawing, painting, photography, printmaking, and
+                        sculpture.</p>
+                </div>
 
-              <button type="button" class="collapsible">Behavioral Science</button>
-              <div class="content">
-                  <img src="Pic/BehavioralScience.webp" alt="Behavioral Science">
-                  <p>Prepares students for service in various agency and institutional settings and for graduate study in psychology, counseling, social work, sociology, human services, and related disciplines.</p>
-              </div>
+                <button type="button" class="collapsible">Behavioral Science</button>
+                <div class="content">
+                    <img src="Pic/BehavioralScience.webp" alt="Behavioral Science">
+                    <p>Prepares students for service in various agency and institutional settings and for graduate
+                        study in psychology, counseling, social work, sociology, human services, and related
+                        disciplines.</p>
+                </div>
 
-              <button type="button" class="collapsible">Business</button>
-              <div class="content">
-                  <img src="Pic/Business.jpg" alt="Business Department">
-                  <p>Allows students to select a concentration in agribusiness, data analysis, financial planning, or management, customizing their path for the career they're aiming for.</p>
-              </div>
+                <button type="button" class="collapsible">Business</button>
+                <div class="content">
+                    <img src="Pic/Business.jpg" alt="Business Department">
+                    <p>Allows students to select a concentration in agribusiness, data analysis, financial planning, or
+                        management, customizing their path for the career they're aiming for.</p>
+                </div>
 
-              <button type="button" class="collapsible">Christian Studies</button>
-              <div class="content">
-                  <img src="Pic/Christian Studies.jpg" alt="Christian Studies Department">
-                  <p>Promotes the academic study of the Bible, biblical languages, Christian education, Christian ministry, intercultural missions, and theology. Equips students for effective service in pastoral, educational, denominational, missions, and other ministries.</p>
-              </div>
+                <button type="button" class="collapsible">Christian Studies</button>
+                <div class="content">
+                    <img src="Pic/Christian Studies.jpg" alt="Christian Studies Department">
+                    <p>Promotes the academic study of the Bible, biblical languages, Christian education, Christian
+                        ministry, intercultural missions, and theology. Equips students for effective service in
+                        pastoral, educational, denominational, missions, and other ministries.</p>
+                </div>
 
-              <button type="button" class="collapsible">Communication Studies</button>
-              <div class="content">
-                  <img src="Pic/CommunicationStudies.jpg" alt="Communication Studies Department">
-                  <p>Offers both generalist and specialized approaches, providing a comprehensive and contemporary program for students interested in media communication-related careers or graduate studies.</p>
-              </div>
+                <button type="button" class="collapsible">Communication Studies</button>
+                <div class="content">
+                    <img src="Pic/CommunicationStudies.jpg" alt="Communication Studies Department">
+                    <p>Offers both generalist and specialized approaches, providing a comprehensive and contemporary
+                        program for students interested in media communication-related careers or graduate studies.</p>
+                </div>
 
-              <button type="button" class="collapsible">Computer Sciences</button>
-              <div class="content">
-                  <img src="Pic/ComputerSciences.png" alt="Computer Sciences Department">
-                  <p>Provides an excellent professional education in computers and technology within a distinctively Christian environment, integrating faith and learning to prepare graduates for personal and career effectiveness.</p>
-              </div>
+                <button type="button" class="collapsible">Computer Sciences</button>
+                <div class="content">
+                    <img src="Pic/ComputerSciences.png" alt="Computer Sciences Department">
+                    <p>Provides an excellent professional education in computers and technology within a distinctively
+                        Christian environment, integrating faith and learning to prepare graduates for personal and
+                        career effectiveness.</p>
+                </div>
 
-              <button type="button" class="collapsible">Criminal Justice</button>
-              <div class="content">
-                  <img src="Pic/CriminalJustice.jpg" alt="Criminal Justice Department">
-                  <p>Offers a rewarding academic experience suitable for students pursuing careers in law enforcement, probation and parole, community-based prevention and control programs, court-based programs, and corrections.</p>
-              </div>
+                <button type="button" class="collapsible">Criminal Justice</button>
+                <div class="content">
+                    <img src="Pic/CriminalJustice.jpg" alt="Criminal Justice Department">
+                    <p>Offers a rewarding academic experience suitable for students pursuing careers in law enforcement,
+                        probation and parole, community-based prevention and control programs, court-based programs, and
+                        corrections.</p>
+                </div>
 
-              <button type="button" class="collapsible">Education</button>
-              <div class="content">
-                  <img src="Pic/Education.jpg" alt="Education Department">
-                  <p>Gives students the opportunity to make a lasting, positive impact through teaching. HLGU graduates have received local, state, and national recognition for their contributions to the teaching profession.</p>
-              </div>
+                <button type="button" class="collapsible">Education</button>
+                <div class="content">
+                    <img src="Pic/Education.jpg" alt="Education Department">
+                    <p>Gives students the opportunity to make a lasting, positive impact through teaching. HLGU
+                        graduates have received local, state, and national recognition for their contributions to the
+                        teaching profession.</p>
+                </div>
 
-              <button type="button" class="collapsible">English</button>
-              <div class="content">
-                  <img src="Pic/English.jpg" alt="English Department">
-                  <p>Strives to provide a framework for excellence in literary analysis, writing effectiveness, and linguistic inquiry. Faculty help students develop writing skills and foster critical thinking through the analysis and interpretation of literature.</p>
-              </div>
+                <button type="button" class="collapsible">English</button>
+                <div class="content">
+                    <img src="Pic/English.jpg" alt="English Department">
+                    <p>Strives to provide a framework for excellence in literary analysis, writing effectiveness, and
+                        linguistic inquiry. Faculty help students develop writing skills and foster critical thinking
+                        through the analysis and interpretation of literature.</p>
+                </div>
 
-              <button type="button" class="collapsible">Exercise and Sport Science</button>
-              <div class="content">
-                  <img src="Pic/ExerciseandSport Science.png" alt="Exercise and Sport Science Department">
-                  <p>Comprises departments that study various aspects of human physical activity related to sports and leisure, including exercise science and sport and recreation management.</p>
-              </div>
+                <button type="button" class="collapsible">Exercise and Sport Science</button>
+                <div class="content">
+                    <img src="Pic/ExerciseandSport Science.png" alt="Exercise and Sport Science Department">
+                    <p>Comprises departments that study various aspects of human physical activity related to sports and
+                        leisure, including exercise science and sport and recreation management.</p>
+                </div>
 
-              <button type="button" class="collapsible">History</button>
-              <div class="content">
-                  <img src="Pic/History.jpg" alt="History Department">
-                  <p>Educates students on the impact of human history on the contemporary world. Graduates work in fields such as private business, government, archives, museums, national parks, and vocational Christian ministry, or pursue graduate studies.</p>
-              </div>
+                <button type="button" class="collapsible">History</button>
+                <div class="content">
+                    <img src="Pic/History.jpg" alt="History Department">
+                    <p>Educates students on the impact of human history on the contemporary world. Graduates work in
+                        fields such as private business, government, archives, museums, national parks, and vocational
+                        Christian ministry, or pursue graduate studies.</p>
+                </div>
 
-              <button type="button" class="collapsible">Mathematics</button>
-              <div class="content">
-                  <img src="Pic/Mathematics.jpg" alt="Mathematics Department">
-                  <p>Helps students broaden their mathematical awareness and problem-solving abilities, enabling a better understanding of God’s creation. Prepares mathematics majors for graduate study or careers requiring expertise in mathematics.</p>
-              </div>
+                <button type="button" class="collapsible">Mathematics</button>
+                <div class="content">
+                    <img src="Pic/Mathematics.jpg" alt="Mathematics Department">
+                    <p>Helps students broaden their mathematical awareness and problem-solving abilities, enabling a
+                        better understanding of God’s creation. Prepares mathematics majors for graduate study or
+                        careers requiring expertise in mathematics.</p>
+                </div>
 
-              <button type="button" class="collapsible">Music</button>
-              <div class="content">
-                  <img src="Pic/Music.jpg" alt="Music Department">
-                  <p>Designed for students interested in instrumental or vocal study, preparing them for graduate school or performance-based careers in music.</p>
-              </div>
+                <button type="button" class="collapsible">Music</button>
+                <div class="content">
+                    <img src="Pic/Music.jpg" alt="Music Department">
+                    <p>Designed for students interested in instrumental or vocal study, preparing them for graduate
+                        school or performance-based careers in music.</p>
+                </div>
 
-              <button type="button" class="collapsible">Natural Science</button>
-              <div class="content">
-                  <img src="Pic/NaturalScience.webp" alt="Natural Science Department">
-                  <p>Includes programs in biology, chemistry, and general science, preparing students for science-related careers or postgraduate education.</p>
-              </div>
+                <button type="button" class="collapsible">Natural Science</button>
+                <div class="content">
+                    <img src="Pic/NaturalScience.webp" alt="Natural Science Department">
+                    <p>Includes programs in biology, chemistry, and general science, preparing students for
+                        science-related careers or postgraduate education.</p>
+                </div>
 
-              <button type="button" class="collapsible">Nursing</button>
-              <div class="content">
-                  <img src="Pic/Nursing.jpg" alt="Nursing Department">
-                  <p>The Craigmiles School of Nursing offers several paths toward a nursing career, including a certificate in practical nursing, Associate of Science in Nursing (ASN), or Bachelor of Science in Nursing Degree for RNs (RN to BSN).</p>
-              </div>
+                <button type="button" class="collapsible">Nursing</button>
+                <div class="content">
+                    <img src="Pic/Nursing.jpg" alt="Nursing Department">
+                    <p>The Craigmiles School of Nursing offers several paths toward a nursing career, including a
+                        certificate in practical nursing, Associate of Science in Nursing (ASN), or Bachelor of Science
+                        in Nursing Degree for RNs (RN to BSN).</p>
+                </div>
 
-              <button type="button" class="collapsible">Theatre</button>
-              <div class="content">
-                  <img src="Pic/Theatre.webp" alt="Theatre Department">
-                  <p>Offers programs designed to prepare students for careers in various drama-related fields, providing comprehensive studies and practical experiences for those interested in immediate careers or graduate studies in theatre.</p>
-              </div>
+                <button type="button" class="collapsible">Theatre</button>
+                <div class="content">
+                    <img src="Pic/Theatre.webp" alt="Theatre Department">
+                    <p>Offers programs designed to prepare students for careers in various drama-related fields,
+                        providing comprehensive studies and practical experiences for those interested in immediate
+                        careers or graduate studies in theatre.</p>
+                </div>
             </div>
 
             <!-- Right Column: Achievements Section -->
@@ -454,20 +611,32 @@
 
                     <div class="achievement-item">
                         <h3>Institutional Excellence & Accreditation</h3>
-                        <p><strong>Accreditation Restored:</strong> In November 2024, the Higher Learning Commission (HLC) removed HLGU from probation, recognizing the university’s substantial progress in financial stability, enrollment growth, and budget management.</p>
-                        <p><strong>Recognized for Institutional Turnaround:</strong> The HLC praised HLGU for its commitment to responsible financial practices, student-focused initiatives, and long-term sustainability.</p>
+                        <p><strong>Accreditation Restored:</strong> In November 2024, the Higher Learning Commission
+                            (HLC) removed HLGU from probation, recognizing the university’s substantial progress in
+                            financial stability, enrollment growth, and budget management.</p>
+                        <p><strong>Recognized for Institutional Turnaround:</strong> The HLC praised HLGU for its
+                            commitment to responsible financial practices, student-focused initiatives, and long-term
+                            sustainability.</p>
                     </div>
 
                     <div class="achievement-item">
                         <h3>Academic Recognition & Scholarships</h3>
-                        <p><strong>Founder's Scholarship Program:</strong> HLGU offers the Founder's Scholarship, a prestigious full-tuition scholarship awarded to outstanding incoming freshmen who demonstrate exceptional academic performance and leadership.</p>
-                        <p><a class="link" href="https://www.hlg.edu/admissions/hlgu-financial-aid/undergraduate-students/freshman-scholarships/">→Learn More About Scholarships</a></p>
+                        <p><strong>Founder's Scholarship Program:</strong> HLGU offers the Founder's Scholarship, a
+                            prestigious full-tuition scholarship awarded to outstanding incoming freshmen who demonstrate
+                            exceptional academic performance and leadership.</p>
+                        <p><a class="link"
+                                href="https://www.hlg.edu/admissions/hlgu-financial-aid/undergraduate-students/freshman-scholarships/">→Learn
+                                More About Scholarships</a></p>
                     </div>
 
                     <div class="achievement-item">
                         <h3>National Rankings & Recognition</h3>
-                        <p><strong>Ranked Among Top Regional Colleges:</strong> HLGU was ranked #53 in the Midwest Regional Colleges category in the 2025 U.S. News & World Report Best Colleges rankings. This recognition reflects HLGU’s commitment to academic excellence, student success, and faculty expertise.</p>
-                        <p><a class="link" href="https://www.usnews.com/best-colleges/hannibal-lagrange-9089">→See the Ranking</a></p>
+                        <p><strong>Ranked Among Top Regional Colleges:</strong> HLGU was ranked #53 in the Midwest
+                            Regional Colleges category in the 2025 U.S. News & World Report Best Colleges rankings. This
+                            recognition reflects HLGU’s commitment to academic excellence, student success, and faculty
+                            expertise.</p>
+                        <p><a class="link" href="https://www.usnews.com/best-colleges/hannibal-lagrange-9089">→See the
+                                Ranking</a></p>
                     </div>
                     <!-- Add image -->
                     <img src="Pic/AcademicAchievements.jpg" alt="Academic Achievements" class="achievements-image">
@@ -479,15 +648,12 @@
     </div>
     <!-- End content-wrapper -->
 
-    <!-- Add a spacer div right before the footer -->
-    <div class="footer-spacer"></div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-links">
-            <a href="Finished Pages/LoginPage.html" class="footer-login">Login Majors</a> |
+            <a href="LoginPage.html" class="footer-login">Login Majors</a> |
             <a href="Privacy-Policy.pdf">Privacy Policy</a> |
-            <a href="#">Terms of Service</a> |
+            <a href="https://www.hlg.edu/academics/registrar/ferpa/university-policy/">Terms of Service</a> |
             <a href="HELP.html">Contact Us</a>
         </div>
         <p>© 2025 Hannibal-LaGrange University. All Rights Reserved.</p>
@@ -511,4 +677,5 @@
     </script>
 
 </body>
+
 </html>
